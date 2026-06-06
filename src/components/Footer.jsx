@@ -20,9 +20,6 @@ function Footer() {
       <div className="container site-footer__grid">
         <div>
           <p className="site-footer__name">Accessible Tantra</p>
-          <p className="site-footer__tagline" lang="hi">
-            समावेशी भारत का मूल मंत्र
-          </p>
         </div>
 
         <nav aria-label="Footer">

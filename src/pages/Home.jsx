@@ -17,9 +17,6 @@ function Home() {
           />
           <div>
             <h1 id="hero-title">Accessible Tantra</h1>
-            <p className="hero__tagline" lang="hi">
-              समावेशी भारत का मूल मंत्र
-            </p>
             <p className="lead">
               A non-profit working to make every <em>tantra</em> — every system, public or
               private — accessible to differently-abled people across India.

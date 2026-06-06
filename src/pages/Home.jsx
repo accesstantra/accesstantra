@@ -10,11 +10,6 @@ function Home() {
       </div>
 
       <section className="home__card">
-        <div className="home__badge">
-          <span className="home__badge-dot" />
-          Maintenance
-        </div>
-
         <h1 className="home__title">
           Welcome to <span className="home__brand">Access Tantra</span>
         </h1>

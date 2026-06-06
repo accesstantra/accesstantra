@@ -11,6 +11,10 @@ dist
 dist-ssr
 *.local
 
+# Working notes (kept locally, not tracked)
+note1.txt
+links.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

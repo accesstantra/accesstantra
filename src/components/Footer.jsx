@@ -8,9 +8,12 @@ const quickLinks = [
   { to: '/contact', label: 'Contact' },
 ]
 
-// Placeholder channels for this first iteration — links resolve to "#" until real
-// handles are available. Each link text names the channel for screen readers.
-const social = ['Instagram', 'Facebook', 'LinkedIn', 'YouTube']
+const social = [
+  { name: 'Instagram', href: 'https://www.instagram.com/accessibletantra/' },
+  { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61590311893370' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/accessible-tantra-310184414/' },
+  { name: 'YouTube', href: 'https://www.youtube.com/@accessibletantra' },
+]
 
 function Footer() {
   const year = new Date().getFullYear()
@@ -36,10 +39,15 @@ function Footer() {
         <div>
           <h2 className="site-footer__heading">Connect</h2>
           <ul className="site-footer__list" role="list">
-            {social.map((name) => (
-              <li key={name}>
-                <a href="#" aria-label={`${name} (link coming soon)`}>
-                  {name}
+            {social.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${item.name} (opens in a new tab)`}
+                >
+                  {item.name}
                 </a>
               </li>
             ))}

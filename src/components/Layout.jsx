@@ -16,9 +16,18 @@ function Layout() {
     mainRef.current?.focus()
   }, [pathname])
 
+  // Focus the main region directly. We can't rely on href="#main-content"
+  // because HashRouter would treat that hash as a (non-existent) route and
+  // render a blank page.
+  function handleSkip(event) {
+    event.preventDefault()
+    mainRef.current?.focus()
+    mainRef.current?.scrollIntoView()
+  }
+
   return (
     <>
-      <a href="#main-content" className="skip-nav">
+      <a href="#main-content" className="skip-nav" onClick={handleSkip}>
         Skip to main content
       </a>
       <Header />

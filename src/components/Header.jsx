@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.jpeg'
+import courses from '../data/courses.js'
 import './Header.css'
 
 const navLinks = [
@@ -12,6 +13,10 @@ const navLinks = [
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  function closeMenu() {
+    setMenuOpen(false)
+  }
 
   return (
     <header className="site-header">
@@ -44,16 +49,88 @@ function Header() {
                   to={link.to}
                   end={link.end}
                   className="site-header__link"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={closeMenu}
                 >
                   {link.label}
                 </NavLink>
               </li>
             ))}
+
+            {courses.length > 0 && <CoursesMenu onNavigate={closeMenu} />}
           </ul>
         </nav>
       </div>
     </header>
+  )
+}
+
+// Collapsible "Courses" disclosure. Renders nothing meaningful if there are no
+// courses (the parent guards on courses.length).
+function CoursesMenu({ onNavigate }) {
+  const [open, setOpen] = useState(false)
+  const containerRef = useRef(null)
+  const buttonRef = useRef(null)
+  const { pathname } = useLocation()
+  const isActive = pathname.startsWith('/courses')
+
+  // Close on outside click and on Escape.
+  useEffect(() => {
+    if (!open) return undefined
+
+    function onPointerDown(event) {
+      if (!containerRef.current?.contains(event.target)) setOpen(false)
+    }
+    function onKeyDown(event) {
+      if (event.key === 'Escape') {
+        setOpen(false)
+        buttonRef.current?.focus()
+      }
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [open])
+
+  function handleSelect() {
+    setOpen(false)
+    onNavigate()
+  }
+
+  return (
+    <li className="site-header__courses" ref={containerRef}>
+      <button
+        type="button"
+        ref={buttonRef}
+        className={`site-header__link site-header__courses-btn${isActive ? ' active' : ''}`}
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-controls="courses-menu"
+        onClick={() => setOpen((value) => !value)}
+      >
+        Courses <span aria-hidden="true">{open ? '▴' : '▾'}</span>
+      </button>
+
+      <ul
+        id="courses-menu"
+        className={`site-header__submenu${open ? ' is-open' : ''}`}
+        role="list"
+      >
+        {courses.map((course) => (
+          <li key={course.id}>
+            <NavLink
+              to={`/courses/${course.id}`}
+              className="site-header__sublink"
+              onClick={handleSelect}
+            >
+              {course.navLabel}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </li>
   )
 }
 

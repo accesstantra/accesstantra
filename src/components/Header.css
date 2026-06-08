@@ -76,6 +76,60 @@
   background: var(--color-primary);
 }
 
+/* ---------- Courses dropdown ---------- */
+.site-header__courses {
+  position: relative;
+}
+
+.site-header__courses-btn {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.site-header__submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 12rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+  display: none;
+  z-index: 200;
+}
+
+.site-header__submenu.is-open {
+  display: block;
+}
+
+.site-header__sublink {
+  display: block;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-header__sublink:hover {
+  background: var(--color-bg-alt);
+  color: var(--color-primary);
+}
+
+.site-header__sublink.active {
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
 @media (max-width: 720px) {
   .site-header__toggle {
     display: inline-flex;
@@ -98,6 +152,24 @@
   }
 
   .site-header__link {
+    display: block;
+  }
+
+  .site-header__courses-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Inline (not floating) inside the collapsed mobile menu */
+  .site-header__submenu {
+    position: static;
+    box-shadow: none;
+    border: 0;
+    min-width: 0;
+    padding: 0 0 0 1rem;
+  }
+
+  .site-header__sublink {
     display: block;
   }
 }

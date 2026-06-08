@@ -1,0 +1,86 @@
+.course-form {
+  max-width: 36rem;
+  margin-top: 1rem;
+}
+
+.course-form__sink {
+  display: none;
+}
+
+.course-form__group {
+  margin: 0 0 1.25rem;
+  border: 0;
+  padding: 0;
+}
+
+.course-form__label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.course-form input[type='text'],
+.course-form input[type='email'],
+.course-form input[type='tel'],
+.course-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.course-form textarea {
+  resize: vertical;
+}
+
+.course-form__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0.35rem 0;
+}
+
+.course-form__option input {
+  margin-top: 0.35rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+}
+
+.course-form__option label {
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.course-form__group--check {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+}
+
+.course-form__required {
+  color: var(--color-accent, #b91c1c);
+}
+
+.course-form__error {
+  margin: 0.35rem 0 0;
+  color: #b91c1c;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.course-form__success {
+  background: var(--color-bg-tint);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.course-form__success h3 {
+  margin-top: 0;
+}

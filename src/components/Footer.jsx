@@ -3,11 +3,11 @@ import './Footer.css'
 
 const quickLinks = [
   { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
   { to: '/initiatives', label: 'Initiatives' },
   { to: '/courses', label: 'Courses' },
   { to: '/announcements', label: 'Announcements' },
   { to: '/contact', label: 'Contact' },
+  { to: '/about', label: 'About' },
 ]
 
 const social = [

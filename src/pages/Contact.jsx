@@ -2,6 +2,12 @@ const channels = [
   { term: 'Email', label: 'accesstantra@gmail.com', href: 'mailto:accesstantra@gmail.com' },
   { term: 'Phone', label: '+91 72609 20093', href: 'tel:+917260920093' },
   {
+    term: 'WhatsApp',
+    label: 'Follow our channel',
+    href: 'https://whatsapp.com/channel/0029VbD4Ydn2P59g03ah4T3D',
+    external: true,
+  },
+  {
     term: 'Instagram',
     label: '@accessibletantra',
     href: 'https://www.instagram.com/accessibletantra/',

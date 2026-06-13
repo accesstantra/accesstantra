@@ -39,9 +39,8 @@ function About() {
 
           <h2>Our goal</h2>
           <p>
-            Through digital skills, accessibility audits, mentoring, placement support, and
-            legal aid, we want to turn scattered efforts into a movement of inclusion that
-            reaches every corner of India.
+            Through digital skills, accessibility training, and mentoring, we want to turn
+            scattered efforts into a movement of inclusion that reaches every corner of India.
           </p>
         </div>
       </section>

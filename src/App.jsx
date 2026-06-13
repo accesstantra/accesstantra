@@ -4,7 +4,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import WhatWeDo from './pages/WhatWeDo.jsx'
 import Contact from './pages/Contact.jsx'
-import CoursePage from './pages/CoursePage.jsx'
+import ProgramPage from './pages/ProgramPage.jsx'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="what-we-do" element={<WhatWeDo />} />
-        <Route path="courses/:courseId" element={<CoursePage />} />
+        <Route path="programs/:programId" element={<ProgramPage />} />
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>

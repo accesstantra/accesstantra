@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.jpeg'
-import courses from '../data/courses.js'
+import programs from '../data/programs.js'
 import './Header.css'
 
 const navLinks = [
@@ -56,7 +56,7 @@ function Header() {
               </li>
             ))}
 
-            {courses.length > 0 && <CoursesMenu onNavigate={closeMenu} />}
+            {programs.length > 0 && <ProgramsMenu onNavigate={closeMenu} />}
           </ul>
         </nav>
       </div>
@@ -64,14 +64,14 @@ function Header() {
   )
 }
 
-// Collapsible "Courses" disclosure. Renders nothing meaningful if there are no
-// courses (the parent guards on courses.length).
-function CoursesMenu({ onNavigate }) {
+// Collapsible "Programs" disclosure. Renders nothing meaningful if there are no
+// programs (the parent guards on programs.length).
+function ProgramsMenu({ onNavigate }) {
   const [open, setOpen] = useState(false)
   const containerRef = useRef(null)
   const buttonRef = useRef(null)
   const { pathname } = useLocation()
-  const isActive = pathname.startsWith('/courses')
+  const isActive = pathname.startsWith('/programs')
 
   // Close on outside click and on Escape.
   useEffect(() => {
@@ -107,25 +107,25 @@ function CoursesMenu({ onNavigate }) {
         className={`site-header__link site-header__courses-btn${isActive ? ' active' : ''}`}
         aria-expanded={open}
         aria-haspopup="true"
-        aria-controls="courses-menu"
+        aria-controls="programs-menu"
         onClick={() => setOpen((value) => !value)}
       >
-        Courses <span aria-hidden="true">{open ? '▴' : '▾'}</span>
+        Programs <span aria-hidden="true">{open ? '▴' : '▾'}</span>
       </button>
 
       <ul
-        id="courses-menu"
+        id="programs-menu"
         className={`site-header__submenu${open ? ' is-open' : ''}`}
         role="list"
       >
-        {courses.map((course) => (
-          <li key={course.id}>
+        {programs.map((program) => (
+          <li key={program.id}>
             <NavLink
-              to={`/courses/${course.id}`}
+              to={`/programs/${program.id}`}
               className="site-header__sublink"
               onClick={handleSelect}
             >
-              {course.navLabel}
+              {program.navLabel}
             </NavLink>
           </li>
         ))}

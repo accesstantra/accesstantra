@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
-import './CourseForm.css'
+import './RegistrationForm.css'
 
-// Renders an accessible, native registration form from a course's `form`
+// Renders an accessible, native registration form from a program's `form`
 // definition and submits it straight to the linked Google Form. We POST a real
 // <form> into a hidden iframe so the page never navigates away and there's no
 // cross-origin fetch involved.
-function CourseForm({ form, courseTitle }) {
+function RegistrationForm({ form, programTitle }) {
   const formRef = useRef(null)
   const successRef = useRef(null)
   const submittingRef = useRef(false)
@@ -73,7 +73,7 @@ function CourseForm({ form, courseTitle }) {
           Thank you — your registration has been submitted.
         </h3>
         <p>
-          We&rsquo;ve received your details for {courseTitle}. Our team will reach out with
+          We&rsquo;ve received your details for {programTitle}. Our team will reach out with
           the next steps.
         </p>
       </div>
@@ -208,4 +208,4 @@ function ErrorText({ id, message }) {
   )
 }
 
-export default CourseForm
+export default RegistrationForm

@@ -76,8 +76,8 @@ function Contact() {
         <div className="container">
           <h2 id="contact-message">Send us a message</h2>
           <p>
-            Enter a subject and your message, then choose <strong>Send mail</strong> — your email
-            app will open with the message ready to send to us.
+            Enter a subject and your message, then choose <strong>Send mail</strong> — Gmail will
+            open in a new tab with your message ready to send to us.
           </p>
           <ContactForm />
         </div>

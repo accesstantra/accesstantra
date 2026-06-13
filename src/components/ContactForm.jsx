@@ -2,8 +2,8 @@ import { useRef, useState } from 'react'
 import { CONTACT } from '../data/site.js'
 import './ContactForm.css'
 
-// Subject + Message form. "Send mail" opens the visitor's email app (mailto)
-// with the message pre-addressed to our inbox — no backend required.
+// Subject + Message form. "Send mail" opens Gmail's web compose window
+// pre-addressed to our inbox (new tab) — no backend required.
 function ContactForm() {
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
@@ -23,10 +23,10 @@ function ContactForm() {
       return
     }
     setError('')
-    const url = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
-      subject.trim(),
-    )}&body=${encodeURIComponent(message.trim())}`
-    window.location.href = url
+    const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      CONTACT.email,
+    )}&su=${encodeURIComponent(subject.trim())}&body=${encodeURIComponent(message.trim())}`
+    window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -68,7 +68,7 @@ function ContactForm() {
       )}
 
       <button type="submit" className="btn btn-primary">
-        Send mail
+        Send mail <span className="sr-only">(opens Gmail in a new tab)</span>
       </button>
     </form>
   )

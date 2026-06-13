@@ -10,30 +10,31 @@ function Home() {
     <>
       <section className="hero" aria-labelledby="hero-title">
         <div className="container hero__inner">
-          <div className="hero__content">
-            <h1 id="hero-title">
-              Making every system and every space accessible across disabilities
-            </h1>
-            <p className="hero__tagline">Training · Mentorship · Collaboration · Innovation</p>
-            <p className="lead">
-              Building an inclusive India where persons with disabilities can participate with
-              dignity, independence, and equal opportunity.
-            </p>
-            <div className="btn-row">
-              <Link to="/courses" className="btn btn-primary">
-                Join Us
-              </Link>
-              <Link to="/programs/collaboration" className="btn btn-outline">
-                Partner With Us
-              </Link>
-              <Link to="/about" className="btn btn-outline">
-                Learn More
-              </Link>
-            </div>
-          </div>
-          {/* Banner artwork to be supplied later — logo used as a placeholder. */}
-          <div className="hero__banner">
-            <img src={logo} alt="Accessible Tantra logo" width="200" height="200" />
+          <img
+            src={logo}
+            alt="Accessible Tantra logo"
+            className="hero__logo"
+            width="130"
+            height="130"
+          />
+          <h1 id="hero-title">
+            Making every system and every space accessible across disabilities
+          </h1>
+          <p className="hero__tagline">Training · Mentorship · Collaboration · Innovation</p>
+          <p className="lead">
+            Building an inclusive India where persons with disabilities can participate with
+            dignity, independence, and equal opportunity.
+          </p>
+          <div className="btn-row">
+            <Link to="/courses" className="btn btn-primary">
+              Join Us
+            </Link>
+            <Link to="/programs/collaboration" className="btn btn-outline">
+              Partner With Us
+            </Link>
+            <Link to="/about" className="btn btn-outline">
+              Learn More
+            </Link>
           </div>
         </div>
       </section>
@@ -116,11 +117,7 @@ function Home() {
       <section className="section" aria-labelledby="home-whatsapp">
         <div className="container">
           <h2 id="home-whatsapp">Computer support on WhatsApp</h2>
-          <p>
-            Need help with computers, phones, or assistive technology? Request to join our
-            Computer Support group. Share your details below and we&rsquo;ll connect with you on
-            WhatsApp.
-          </p>
+          <p>Get help with computers, phones, and assistive technology.</p>
           <WhatsAppJoinForm />
         </div>
       </section>

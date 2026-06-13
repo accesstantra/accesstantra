@@ -1,46 +1,36 @@
-.wa-form {
-  max-width: 32rem;
+.wa-join {
+  margin-top: 0.5rem;
+}
+
+.wa-join__panel {
   margin-top: 1rem;
-}
-
-.wa-form__group {
-  margin-bottom: 1rem;
-}
-
-.wa-form__group label {
-  display: block;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 0.35rem;
-}
-
-.wa-form input,
-.wa-form textarea {
-  width: 100%;
-  padding: 0.6rem 0.7rem;
-  font: inherit;
-  color: var(--color-text);
+  padding: 1.25rem;
+  max-width: 36rem;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
 }
 
-.wa-form textarea {
-  resize: vertical;
+.wa-join__sentence {
+  font-size: 1.05rem;
+  line-height: 2.4;
+  margin: 0 0 1rem;
 }
 
-.wa-form__req {
-  color: #b91c1c;
+.wa-join__field {
+  font: inherit;
+  padding: 0.2rem 0.5rem;
+  min-width: 9rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 0;
+  border-bottom: 2px solid var(--color-primary);
+  border-radius: 4px 4px 0 0;
 }
 
 .wa-form__error {
-  margin: 0.35rem 0 0;
+  margin: 0 0 0.75rem;
   color: #b91c1c;
   font-weight: 600;
   font-size: 0.95rem;
-}
-
-.wa-form__status:not(:empty) {
-  margin-top: 0.75rem;
-  color: var(--color-text-muted);
 }

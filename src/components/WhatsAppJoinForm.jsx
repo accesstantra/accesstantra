@@ -1,115 +1,78 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { WHATSAPP_SUPPORT_NUMBER } from '../data/site.js'
 import './WhatsAppJoinForm.css'
 
-// Collects a name, WhatsApp number, and optional message, then opens WhatsApp
-// (via a wa.me deep link) with a pre-filled message addressed to the support
-// number. A site can't silently send WhatsApp messages, so the visitor taps
-// Send in their own WhatsApp. No backend required.
+// Collapsible "request to join" control. When expanded it shows a short
+// fill-in-the-blank sentence (name + state); "Request join" opens WhatsApp via
+// a wa.me deep link with the composed message addressed to the support number.
+// The visitor sends it from their own WhatsApp, so their number is included
+// automatically — no need to ask for it.
 function WhatsAppJoinForm() {
-  const [values, setValues] = useState({ name: '', phone: '', message: '' })
-  const [errors, setErrors] = useState({})
-  const [opened, setOpened] = useState(false)
-  const formRef = useRef(null)
-
-  function update(field) {
-    return (event) => setValues((prev) => ({ ...prev, [field]: event.target.value }))
-  }
+  const [open, setOpen] = useState(false)
+  const [name, setName] = useState('')
+  const [state, setState] = useState('')
+  const [error, setError] = useState('')
 
   function handleSubmit(event) {
     event.preventDefault()
-    const found = {}
-    if (!values.name.trim()) found.name = 'Please enter your name.'
-    if (!values.phone.trim()) found.phone = 'Please enter your WhatsApp number.'
-    setErrors(found)
-
-    if (Object.keys(found).length > 0) {
-      const firstKey = Object.keys(found)[0]
-      formRef.current?.querySelector(`[name="${firstKey}"]`)?.focus()
+    if (!name.trim() || !state.trim()) {
+      setError('Please fill in your name and your state.')
       return
     }
-
-    const lines = [
-      'Hello Accessible Tantra, I would like to join the Computer Support WhatsApp group.',
-      `Name: ${values.name}`,
-      `WhatsApp: ${values.phone}`,
-    ]
-    if (values.message.trim()) lines.push(`Message: ${values.message}`)
-
-    const url = `https://wa.me/${WHATSAPP_SUPPORT_NUMBER}?text=${encodeURIComponent(
-      lines.join('\n'),
-    )}`
+    setError('')
+    const message = `Hi. My name is ${name.trim()} and I am from ${state.trim()}, and I want to request to join the computer-specific support WhatsApp group.`
+    const url = `https://wa.me/${WHATSAPP_SUPPORT_NUMBER}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank', 'noopener,noreferrer')
-    setOpened(true)
   }
 
   return (
-    <form ref={formRef} className="wa-form" onSubmit={handleSubmit} noValidate>
-      <div className="wa-form__group">
-        <label htmlFor="wa-name">
-          Name <span className="wa-form__req" aria-hidden="true">*</span>
-          <span className="sr-only">(required)</span>
-        </label>
-        <input
-          id="wa-name"
-          name="name"
-          type="text"
-          autoComplete="name"
-          value={values.name}
-          onChange={update('name')}
-          aria-invalid={errors.name ? 'true' : undefined}
-          aria-describedby={errors.name ? 'wa-name-error' : undefined}
-        />
-        {errors.name && (
-          <p id="wa-name-error" className="wa-form__error" role="alert">
-            {errors.name}
-          </p>
-        )}
-      </div>
-
-      <div className="wa-form__group">
-        <label htmlFor="wa-phone">
-          WhatsApp number <span className="wa-form__req" aria-hidden="true">*</span>
-          <span className="sr-only">(required)</span>
-        </label>
-        <input
-          id="wa-phone"
-          name="phone"
-          type="tel"
-          autoComplete="tel"
-          value={values.phone}
-          onChange={update('phone')}
-          aria-invalid={errors.phone ? 'true' : undefined}
-          aria-describedby={errors.phone ? 'wa-phone-error' : undefined}
-        />
-        {errors.phone && (
-          <p id="wa-phone-error" className="wa-form__error" role="alert">
-            {errors.phone}
-          </p>
-        )}
-      </div>
-
-      <div className="wa-form__group">
-        <label htmlFor="wa-message">Message (optional)</label>
-        <textarea
-          id="wa-message"
-          name="message"
-          rows={3}
-          value={values.message}
-          onChange={update('message')}
-        />
-      </div>
-
-      <button type="submit" className="btn btn-primary">
-        Request to join on WhatsApp
+    <div className="wa-join">
+      <button
+        type="button"
+        className="btn btn-primary"
+        aria-expanded={open}
+        aria-controls="wa-join-panel"
+        onClick={() => setOpen((value) => !value)}
+      >
+        Request to join <span aria-hidden="true">{open ? '▴' : '▾'}</span>
       </button>
 
-      <p className="wa-form__status" role="status" aria-live="polite">
-        {opened
-          ? 'WhatsApp should have opened with your message ready to send. If it didn’t, please make sure WhatsApp is installed or try again.'
-          : ''}
-      </p>
-    </form>
+      {open && (
+        <form id="wa-join-panel" className="wa-join__panel" onSubmit={handleSubmit}>
+          <p className="wa-join__sentence">
+            Hi. My name is{' '}
+            <input
+              type="text"
+              className="wa-join__field"
+              aria-label="Your name"
+              autoComplete="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />{' '}
+            and I am from{' '}
+            <input
+              type="text"
+              className="wa-join__field"
+              aria-label="Your state"
+              autoComplete="address-level1"
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+            />
+            , and I want to request to join the computer-specific support WhatsApp group.
+          </p>
+
+          {error && (
+            <p className="wa-form__error" role="alert">
+              {error}
+            </p>
+          )}
+
+          <button type="submit" className="btn btn-primary">
+            Request join
+          </button>
+        </form>
+      )}
+    </div>
   )
 }
 

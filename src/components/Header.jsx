@@ -18,6 +18,17 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
 
+  // Move focus into the main region. We avoid href="#main-content" because
+  // HashRouter would treat that hash as a (non-existent) route.
+  function handleSkip(event) {
+    event.preventDefault()
+    const main = document.getElementById('main-content')
+    if (main) {
+      main.focus()
+      main.scrollIntoView()
+    }
+  }
+
   return (
     <header className="site-header">
       <div className="container site-header__inner">
@@ -25,6 +36,10 @@ function Header() {
           <img src={logo} alt="" className="site-header__logo" width="44" height="44" />
           <span className="site-header__name">Accessible&nbsp;Tantra</span>
         </Link>
+
+        <a href="#main-content" className="skip-nav" onClick={handleSkip}>
+          Skip to main content
+        </a>
 
         <button
           type="button"

@@ -9,6 +9,14 @@
       content="Accessible Tantra — a non-profit working to make every system, public or private, accessible to differently-abled people across India."
     />
     <title>Accessible Tantra</title>
+    <script>
+      // Apply saved theme before paint to avoid a flash. Default: light.
+      try {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

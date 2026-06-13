@@ -10,6 +10,7 @@ const quickLinks = [
 ]
 
 const social = [
+  { name: 'WhatsApp Channel', href: 'https://whatsapp.com/channel/0029VbD4Ydn2P59g03ah4T3D' },
   { name: 'Instagram', href: 'https://www.instagram.com/accessibletantra/' },
   { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61590311893370' },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/accessible-tantra-310184414/' },

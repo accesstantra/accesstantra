@@ -1,45 +1,31 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.jpeg'
 import initiatives from '../data/initiatives.js'
 import { YOUTUBE_URL } from '../data/site.js'
 import WhatsAppJoinForm from '../components/WhatsAppJoinForm.jsx'
 import './Home.css'
 
+// The site title, tagline, and logo now live in the global header, so Home
+// starts straight into its content sections. The header provides this page's
+// <h1>; the sections below are all <h2>.
 function Home() {
   return (
     <>
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="container hero__inner">
-          <img
-            src={logo}
-            alt="Accessible Tantra logo"
-            className="hero__logo"
-            width="130"
-            height="130"
-          />
-          <h1 id="hero-title">
-            Making every system and every space accessible across disabilities
-          </h1>
-          <p className="hero__tagline">Training · Mentorship · Collaboration · Innovation</p>
-          <p className="lead">
-            Building an inclusive India where persons with disabilities can participate with
-            dignity, independence, and equal opportunity.
+      <section className="section" aria-labelledby="home-announcements">
+        <div className="container">
+          <h2 id="home-announcements">Announcements</h2>
+          <p>
+            Registrations are open for our <strong>Free 21-Day Intermediate to Advanced Excel
+            Training</strong> — designed for visually impaired learners and screen reader users.
           </p>
           <div className="btn-row">
-            <Link to="/courses" className="btn btn-primary">
-              Join Us
-            </Link>
-            <Link to="/programs/collaboration" className="btn btn-outline">
-              Partner With Us
-            </Link>
-            <Link to="/about" className="btn btn-outline">
-              Learn More
+            <Link to="/courses/excel" className="btn btn-primary">
+              Excel training details
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="home-why">
+      <section className="section section--alt" aria-labelledby="home-why">
         <div className="container">
           <h2 id="home-why">Why Accessible Tantra?</h2>
           <p>
@@ -63,7 +49,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="home-initiatives">
+      <section className="section" aria-labelledby="home-initiatives">
         <div className="container">
           <h2 id="home-initiatives">Our initiatives</h2>
           <ul className="grid grid-2 grid-3 card-list" role="list">
@@ -79,21 +65,6 @@ function Home() {
           <div className="btn-row">
             <Link to="/initiatives" className="btn btn-outline">
               Explore all initiatives
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="home-announcements">
-        <div className="container">
-          <h2 id="home-announcements">Announcements</h2>
-          <p>
-            Registrations are open for our <strong>Free 21-Day Intermediate to Advanced Excel
-            Training</strong> — designed for visually impaired learners and screen reader users.
-          </p>
-          <div className="btn-row">
-            <Link to="/courses/excel" className="btn btn-primary">
-              Excel training details
             </Link>
           </div>
         </div>
@@ -128,6 +99,10 @@ function Home() {
           <p>
             If you wish to host a webinar, workshop, or training in the field of accessibility or
             technology, we&rsquo;d be glad to collaborate. Please reach out to us.
+          </p>
+          <p>
+            Our experts will be glad to extend support in both online mode and offline mode (in
+            limited places).
           </p>
           <div className="btn-row">
             <Link to="/contact" className="btn btn-primary">

@@ -1,7 +1,7 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import RegistrationForm from './RegistrationForm.jsx'
-import TranslateToggle from './TranslateToggle.jsx'
+import LanguageToggle from './LanguageToggle.jsx'
 import './ContentPage.css'
 
 function Paragraphs({ text }) {
@@ -36,10 +36,11 @@ function Ctas({ ctas }) {
 }
 
 // Generic, data-driven page used for initiatives, courses, and info pages.
-// Renders: hero → (skip-to-form) → intro + sections → optional form → optional
-// CTAs / return-home. The page definition shape is documented in the data files.
+// When the page provides a `hi` object ({ intro, sections, formIntro }), a
+// single English / हिन्दी toggle switches the entire description to Hindi.
 function ContentPage({ page }) {
   const formHeadingRef = useRef(null)
+  const [lang, setLang] = useState('en')
 
   if (!page) {
     return (
@@ -57,6 +58,11 @@ function ContentPage({ page }) {
 
   const hasFormSection = Boolean(page.formHeading || page.form)
   const hasEmbeddedForm = Boolean(page.form)
+  const hasHindi = Boolean(page.hi)
+  // Description fields (intro, sections, formIntro) come from the Hindi object
+  // when Hindi is selected; everything else stays in English.
+  const desc = hasHindi && lang === 'hi' ? page.hi : page
+  const descLang = hasHindi ? lang : undefined
 
   function skipToForm() {
     formHeadingRef.current?.focus()
@@ -92,24 +98,34 @@ function ContentPage({ page }) {
       {(page.intro || page.sections) && (
         <section className="section">
           <div className="container">
-            {page.intro && (
-              <div className="lead">
-                <Paragraphs text={page.intro} />
+            {hasHindi && (
+              <div className="lang-bar">
+                <span className="lang-bar__label">Read this page in:</span>
+                <LanguageToggle lang={lang} onChange={setLang} />
               </div>
             )}
-            {page.sections?.map((section, i) => (
-              <div className="content-block" key={section.heading || i}>
-                {section.heading && <h2>{section.heading}</h2>}
-                {section.body && <Paragraphs text={section.body} />}
-                {section.list && (
-                  <ul>
-                    {section.list.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
+
+            <div lang={descLang}>
+              {desc.intro && (
+                <div className="lead">
+                  <Paragraphs text={desc.intro} />
+                </div>
+              )}
+              {desc.sections?.map((section, i) => (
+                <div className="content-block" key={section.heading || i}>
+                  {section.heading && <h2>{section.heading}</h2>}
+                  {section.body && <Paragraphs text={section.body} />}
+                  {section.list && (
+                    <ul>
+                      {section.list.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+
             {!hasFormSection && <Ctas ctas={page.ctas} />}
           </div>
         </section>
@@ -121,12 +137,11 @@ function ContentPage({ page }) {
             <h2 id="form-heading" tabIndex={-1} ref={formHeadingRef}>
               {page.formHeading || 'Form'}
             </h2>
-            {page.formIntro &&
-              (page.formIntroHi ? (
-                <TranslateToggle en={page.formIntro} hi={page.formIntroHi} />
-              ) : (
-                <Paragraphs text={page.formIntro} />
-              ))}
+            {desc.formIntro && (
+              <div lang={descLang}>
+                <Paragraphs text={desc.formIntro} />
+              </div>
+            )}
             {page.form?.type === 'embed' && (
               <iframe
                 className="program-embed"

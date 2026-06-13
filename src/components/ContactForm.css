@@ -1,28 +1,21 @@
-.wa-join {
-  margin-top: 0.5rem;
-}
-
-.wa-join__panel {
+.contact-form {
+  max-width: 36rem;
   margin-top: 1rem;
-  padding: 1.25rem;
-  max-width: 28rem;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
 }
 
-.wa-join__group {
+.contact-form__group {
   margin-bottom: 1rem;
 }
 
-.wa-join__group label {
+.contact-form__group label {
   display: block;
   font-weight: 600;
   color: var(--color-primary);
   margin-bottom: 0.35rem;
 }
 
-.wa-join__group input {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 0.6rem 0.7rem;
   font: inherit;
@@ -32,11 +25,15 @@
   border-radius: 8px;
 }
 
-.wa-join__req {
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form__req {
   color: var(--color-error);
 }
 
-.wa-join__error {
+.contact-form__error {
   margin: 0 0 0.75rem;
   color: var(--color-error);
   font-weight: 600;

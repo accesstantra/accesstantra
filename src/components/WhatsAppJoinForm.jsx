@@ -1,22 +1,28 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { WHATSAPP_SUPPORT_NUMBER } from '../data/site.js'
 import './WhatsAppJoinForm.css'
 
-// Collapsible "request to join" control. When expanded it shows a short
-// fill-in-the-blank sentence (name + state); "Request join" opens WhatsApp via
-// a wa.me deep link with the composed message addressed to the support number.
-// The visitor sends it from their own WhatsApp, so their number is included
-// automatically — no need to ask for it.
+// Collapsible "request to join" control. Asks only for name + state; the full
+// WhatsApp message is composed behind the scenes. "Request join" opens WhatsApp
+// (wa.me) with that message addressed to the support number — the visitor sends
+// it from their own WhatsApp, so their number is included automatically.
 function WhatsAppJoinForm() {
   const [open, setOpen] = useState(false)
   const [name, setName] = useState('')
   const [state, setState] = useState('')
   const [error, setError] = useState('')
+  const formRef = useRef(null)
 
   function handleSubmit(event) {
     event.preventDefault()
-    if (!name.trim() || !state.trim()) {
-      setError('Please fill in your name and your state.')
+    if (!name.trim()) {
+      setError('Please enter your name.')
+      formRef.current?.querySelector('#wa-name')?.focus()
+      return
+    }
+    if (!state.trim()) {
+      setError('Please enter your state.')
+      formRef.current?.querySelector('#wa-state')?.focus()
       return
     }
     setError('')
@@ -38,31 +44,41 @@ function WhatsAppJoinForm() {
       </button>
 
       {open && (
-        <form id="wa-join-panel" className="wa-join__panel" onSubmit={handleSubmit}>
-          <p className="wa-join__sentence">
-            Hi. My name is{' '}
+        <form id="wa-join-panel" className="wa-join__panel" ref={formRef} onSubmit={handleSubmit} noValidate>
+          <div className="wa-join__group">
+            <label htmlFor="wa-name">
+              Name <span className="wa-join__req" aria-hidden="true">*</span>
+              <span className="sr-only">(required)</span>
+            </label>
             <input
+              id="wa-name"
+              name="name"
               type="text"
-              className="wa-join__field"
-              aria-label="Your name"
               autoComplete="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-            />{' '}
-            and I am from{' '}
+              aria-invalid={error && !name.trim() ? 'true' : undefined}
+            />
+          </div>
+
+          <div className="wa-join__group">
+            <label htmlFor="wa-state">
+              State <span className="wa-join__req" aria-hidden="true">*</span>
+              <span className="sr-only">(required)</span>
+            </label>
             <input
+              id="wa-state"
+              name="state"
               type="text"
-              className="wa-join__field"
-              aria-label="Your state"
               autoComplete="address-level1"
               value={state}
               onChange={(e) => setState(e.target.value)}
+              aria-invalid={error && !state.trim() ? 'true' : undefined}
             />
-            , and I want to request to join the computer-specific support WhatsApp group.
-          </p>
+          </div>
 
           {error && (
-            <p className="wa-form__error" role="alert">
+            <p className="wa-join__error" role="alert">
               {error}
             </p>
           )}

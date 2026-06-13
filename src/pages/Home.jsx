@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.jpeg'
-import services from '../data/services.js'
+import initiatives from '../data/initiatives.js'
+import { YOUTUBE_URL } from '../data/site.js'
+import WhatsAppJoinForm from '../components/WhatsAppJoinForm.jsx'
 import './Home.css'
 
 function Home() {
@@ -8,59 +10,134 @@ function Home() {
     <>
       <section className="hero" aria-labelledby="hero-title">
         <div className="container hero__inner">
-          <img
-            src={logo}
-            alt="Accessible Tantra logo — the letter A filled with disability and accessibility symbols"
-            className="hero__logo"
-            width="160"
-            height="160"
-          />
-          <div>
-            <h1 id="hero-title">Accessible Tantra</h1>
+          <div className="hero__content">
+            <h1 id="hero-title">
+              Making every system and every space accessible across disabilities
+            </h1>
+            <p className="hero__tagline">Training · Mentorship · Collaboration · Innovation</p>
             <p className="lead">
-              A non-profit working to make every <em>tantra</em> — every system, public or
-              private — accessible to differently-abled people across India.
+              Building an inclusive India where persons with disabilities can participate with
+              dignity, independence, and equal opportunity.
             </p>
             <div className="btn-row">
-              <Link to="/what-we-do" className="btn btn-primary">
-                What we do
+              <Link to="/courses" className="btn btn-primary">
+                Join Us
+              </Link>
+              <Link to="/programs/collaboration" className="btn btn-outline">
+                Partner With Us
               </Link>
               <Link to="/about" className="btn btn-outline">
-                About us
+                Learn More
               </Link>
             </div>
+          </div>
+          {/* Banner artwork to be supplied later — logo used as a placeholder. */}
+          <div className="hero__banner">
+            <img src={logo} alt="Accessible Tantra logo" width="200" height="200" />
           </div>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="services-title">
+      <section className="section" aria-labelledby="home-why">
         <div className="container">
-          <h2 id="services-title">How we help</h2>
-          <ul className="grid grid-2 grid-3 card-list" role="list">
-            {services.map((service) => (
-              <li key={service.title} className="card">
-                <h3>{service.title}</h3>
-                <p>{service.summary}</p>
-              </li>
-            ))}
-          </ul>
+          <h2 id="home-why">Why Accessible Tantra?</h2>
+          <p>
+            India is home to more than <strong>2.68 crore</strong> persons with disabilities
+            (Census 2011) — and these figures are widely considered an underestimate. Despite
+            progress in disability rights, accessibility and inclusion remain a challenge across
+            education, employment, technology, transport, healthcare, and public life.
+          </p>
+          <p>
+            Too often, accessibility efforts remain fragmented — isolated by disability, region,
+            or sector. But accessibility is a societal issue, not a disability-specific one.
+            Accessible Tantra is a collaborative movement: a common platform where individuals,
+            organisations, experts, and advocates come together to identify barriers, share
+            solutions, build capacity, and work towards a more accessible society.
+          </p>
+          <div className="btn-row">
+            <Link to="/about" className="btn btn-outline">
+              Learn more about us
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="section section--alt" aria-labelledby="mission-title">
+      <section className="section section--alt" aria-labelledby="home-initiatives">
         <div className="container">
-          <h2 id="mission-title">Why we exist</h2>
-          <p className="lead">
-            Many accessibility efforts wait for people to find them. We go door to door
-            instead — reaching differently-abled people where they are.
+          <h2 id="home-initiatives">Our initiatives</h2>
+          <ul className="grid grid-2 grid-3 card-list" role="list">
+            {initiatives.map((item) => (
+              <li key={item.id} className="card">
+                <h3>
+                  <Link to={`/programs/${item.id}`}>{item.title}</Link>
+                </h3>
+                <p>{item.tagline}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="btn-row">
+            <Link to="/initiatives" className="btn btn-outline">
+              Explore all initiatives
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="home-announcements">
+        <div className="container">
+          <h2 id="home-announcements">Announcements</h2>
+          <p>
+            Registrations are open for our <strong>Free 21-Day Intermediate to Advanced Excel
+            Training</strong> — designed for visually impaired learners and screen reader users.
           </p>
-          <p className="stat">
-            <strong>52.2%</strong> — literacy rate among persons with disabilities in India,
-            against roughly 80% for the general population.
+          <div className="btn-row">
+            <Link to="/courses/excel" className="btn btn-primary">
+              Excel training details
+            </Link>
+            <Link to="/announcements" className="btn btn-outline">
+              All announcements
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt" aria-labelledby="home-youtube">
+        <div className="container">
+          <h2 id="home-youtube">Watch and learn on YouTube</h2>
+          <p>
+            Explore free tutorials and accessibility-related content — from smartphone and
+            computer skills to assistive technology tips and screen-reader techniques.
+          </p>
+          <div className="btn-row">
+            <a className="btn btn-primary" href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer">
+              Visit our YouTube channel <span className="sr-only">(opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="home-whatsapp">
+        <div className="container">
+          <h2 id="home-whatsapp">Computer support on WhatsApp</h2>
+          <p>
+            Need help with computers, phones, or assistive technology? Request to join our
+            Computer Support group. Share your details below and we&rsquo;ll connect with you on
+            WhatsApp.
+          </p>
+          <WhatsAppJoinForm />
+        </div>
+      </section>
+
+      <section className="section section--alt" aria-labelledby="home-webinar">
+        <div className="container">
+          <h2 id="home-webinar">Host a webinar or workshop</h2>
+          <p>
+            If you wish to host a webinar, workshop, or training in the field of accessibility or
+            technology, we&rsquo;d be glad to collaborate. Please reach out to us.
           </p>
           <div className="btn-row">
             <Link to="/contact" className="btn btn-primary">
-              Get in touch
+              Contact us
             </Link>
           </div>
         </div>

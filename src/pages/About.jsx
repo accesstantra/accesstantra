@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function About() {
   return (
     <>
@@ -5,43 +7,79 @@ function About() {
         <div className="container">
           <h1 id="about-title">About us</h1>
           <p className="lead">
-            Accessible Tantra is a non-profit ensuring that every <em>tantra</em> — the
-            machinery of government or private life — is accessible to the differently-abled.
+            Accessible Tantra is a social initiative committed to making every system, every
+            space, and every opportunity accessible for persons with disabilities.
           </p>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <h2>A flowing river, not a static pond</h2>
+          <h2>Who we are</h2>
           <p>
-            Many good organisations already work on accessibility, but often statically —
-            like a pond that only reaches those who come to it. In a country where awareness
-            is still low, that isn’t enough. We take a dynamic, door-to-door approach,
-            reaching differently-abled people where they live rather than waiting for them to
-            find us.
+            Accessibility cannot be achieved in isolation — it requires collaboration across
+            disabilities, sectors, and communities. Accessible Tantra is a collaborative
+            movement that brings individuals, organisations, institutions, experts, and
+            advocates together to identify barriers, share solutions, build capacity, and work
+            collectively towards a more accessible society. Our approach extends beyond offices
+            and conference halls: through community outreach, door-to-door awareness, digital
+            literacy, mentorship, advocacy, and resource sharing, we aim to bring accessibility
+            directly to the people who need it most.
+          </p>
+
+          <h2>Our journey</h2>
+          <p>
+            Accessible Tantra traces its roots to <strong>Android Mobile Café</strong>, a
+            YouTube-based initiative launched in June 2018 to make technology more accessible
+            for persons with visual impairments. Initially focused on Android smartphones, screen
+            readers, mobile applications, and digital services, it gradually expanded to include
+            computer training, internet usage, digital literacy, and assistive technologies.
+          </p>
+          <p>
+            During the COVID-19 pandemic, online training programmes and computer classes enabled
+            participants from across India to develop digital skills and access technology more
+            effectively. Interactions with students, professionals, parents, and persons with
+            disabilities highlighted that accessibility extends far beyond technology — education,
+            employment, information, and public services continue to present barriers.
+          </p>
+          <p>
+            Inspired by these learnings and the evolving needs of the community, Android Mobile
+            Café was reimagined as <strong>Accessible Tantra in 2026</strong>, with a wider
+            vision of promoting accessibility, inclusion, awareness, collaboration, mentorship,
+            and digital empowerment across all spheres of society.
           </p>
 
           <h2>The need</h2>
           <ul>
             <li>
-              <strong>2.68 crore</strong> persons with disabilities in India (Census 2011),
-              nearly 70% of them in rural areas.
+              More than <strong>2.68 crore</strong> persons with disabilities live in India
+              (Census 2011) — widely considered an underestimate.
             </li>
             <li>
-              <strong>52.2%</strong> literacy among persons with disabilities, far below the
-              general rate.
+              Barriers persist across education, employment, technology, transport, healthcare,
+              and public services.
             </li>
             <li>
-              Only <strong>1 in 5</strong> complete secondary education or higher.
+              Efforts often remain fragmented — isolated by disability, region, or sector —
+              while accessibility is a shared, societal responsibility.
             </li>
           </ul>
 
-          <h2>Our goal</h2>
+          <h2>Our vision</h2>
           <p>
-            Through digital skills, accessibility training, and mentoring, we want to turn
-            scattered efforts into a movement of inclusion that reaches every corner of India.
+            An inclusive India where accessibility is a lived reality — visible in every system,
+            every space, and every opportunity — and where persons with disabilities participate
+            with dignity, independence, and equal opportunity.
           </p>
+
+          <div className="btn-row">
+            <Link to="/initiatives" className="btn btn-primary">
+              Explore our initiatives
+            </Link>
+            <Link to="/contact" className="btn btn-outline">
+              Get in touch
+            </Link>
+          </div>
         </div>
       </section>
     </>

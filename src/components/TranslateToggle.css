@@ -1,0 +1,37 @@
+.translate {
+  margin: 0 0 1rem;
+}
+
+.translate__controls {
+  display: inline-flex;
+  gap: 0;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.translate__btn {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.35rem 0.9rem;
+  background: var(--color-bg);
+  color: var(--color-primary);
+  border: 0;
+}
+
+.translate__btn + .translate__btn {
+  border-left: 1px solid var(--color-border);
+}
+
+.translate__btn[aria-pressed='true'] {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.translate__text {
+  max-width: 60ch;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}

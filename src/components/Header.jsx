@@ -1,22 +1,22 @@
-import { useEffect, useRef, useState } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { NavLink, Link } from 'react-router-dom'
 import logo from '../assets/logo.jpeg'
-import programs from '../data/programs.js'
+import initiatives from '../data/initiatives.js'
+import infoPages from '../data/infoPages.js'
+import NavDropdown from './NavDropdown.jsx'
 import './Header.css'
 
-const navLinks = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
-  { to: '/what-we-do', label: 'What We Do' },
-  { to: '/contact', label: 'Contact' },
+const programItems = [
+  { to: '/initiatives', label: 'All Initiatives' },
+  ...initiatives.map((item) => ({ to: `/programs/${item.id}`, label: item.navLabel })),
 ]
+
+const exploreItems = infoPages.map((page) => ({ to: `/${page.id}`, label: page.navLabel }))
+const explorePrefixes = infoPages.map((page) => `/${page.id}`)
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-
-  function closeMenu() {
-    setMenuOpen(false)
-  }
+  const closeMenu = () => setMenuOpen(false)
 
   return (
     <header className="site-header">
@@ -43,94 +43,46 @@ function Header() {
           className={`site-header__nav${menuOpen ? ' is-open' : ''}`}
         >
           <ul className="site-header__list" role="list">
-            {navLinks.map((link) => (
-              <li key={link.to}>
-                <NavLink
-                  to={link.to}
-                  end={link.end}
-                  className="site-header__link"
-                  onClick={closeMenu}
-                >
-                  {link.label}
-                </NavLink>
-              </li>
-            ))}
+            <li>
+              <NavLink to="/" end className="site-header__link" onClick={closeMenu}>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className="site-header__link" onClick={closeMenu}>
+                About
+              </NavLink>
+            </li>
 
-            {programs.length > 0 && <ProgramsMenu onNavigate={closeMenu} />}
+            <NavDropdown
+              label="Programs"
+              items={programItems}
+              activePrefixes={['/programs', '/initiatives']}
+              onNavigate={closeMenu}
+            />
+
+            <li>
+              <NavLink to="/courses" className="site-header__link" onClick={closeMenu}>
+                Courses
+              </NavLink>
+            </li>
+
+            <NavDropdown
+              label="Explore"
+              items={exploreItems}
+              activePrefixes={explorePrefixes}
+              onNavigate={closeMenu}
+            />
+
+            <li>
+              <NavLink to="/contact" className="site-header__link" onClick={closeMenu}>
+                Contact
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
-  )
-}
-
-// Collapsible "Programs" disclosure. Renders nothing meaningful if there are no
-// programs (the parent guards on programs.length).
-function ProgramsMenu({ onNavigate }) {
-  const [open, setOpen] = useState(false)
-  const containerRef = useRef(null)
-  const buttonRef = useRef(null)
-  const { pathname } = useLocation()
-  const isActive = pathname.startsWith('/programs')
-
-  // Close on outside click and on Escape.
-  useEffect(() => {
-    if (!open) return undefined
-
-    function onPointerDown(event) {
-      if (!containerRef.current?.contains(event.target)) setOpen(false)
-    }
-    function onKeyDown(event) {
-      if (event.key === 'Escape') {
-        setOpen(false)
-        buttonRef.current?.focus()
-      }
-    }
-    document.addEventListener('pointerdown', onPointerDown)
-    document.addEventListener('keydown', onKeyDown)
-    return () => {
-      document.removeEventListener('pointerdown', onPointerDown)
-      document.removeEventListener('keydown', onKeyDown)
-    }
-  }, [open])
-
-  function handleSelect() {
-    setOpen(false)
-    onNavigate()
-  }
-
-  return (
-    <li className="site-header__courses" ref={containerRef}>
-      <button
-        type="button"
-        ref={buttonRef}
-        className={`site-header__link site-header__courses-btn${isActive ? ' active' : ''}`}
-        aria-expanded={open}
-        aria-haspopup="true"
-        aria-controls="programs-menu"
-        onClick={() => setOpen((value) => !value)}
-      >
-        Programs <span aria-hidden="true">{open ? '▴' : '▾'}</span>
-      </button>
-
-      <ul
-        id="programs-menu"
-        className={`site-header__submenu${open ? ' is-open' : ''}`}
-        role="list"
-      >
-        {programs.map((program) => (
-          <li key={program.id}>
-            <NavLink
-              to={`/programs/${program.id}`}
-              className="site-header__sublink"
-              onClick={handleSelect}
-            >
-              {program.navLabel}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </li>
   )
 }
 

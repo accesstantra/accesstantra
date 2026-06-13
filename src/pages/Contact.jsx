@@ -71,6 +71,17 @@ function Contact() {
           </dl>
         </div>
       </section>
+
+      <section className="section section--alt" aria-labelledby="contact-host">
+        <div className="container">
+          <h2 id="contact-host">Host a webinar, workshop, or training</h2>
+          <p>
+            If you wish to host a webinar, workshop, or training in the field of accessibility or
+            technology, we&rsquo;d be glad to collaborate. Please reach out using any of the
+            contacts above and our team will get back to you.
+          </p>
+        </div>
+      </section>
     </>
   )
 }

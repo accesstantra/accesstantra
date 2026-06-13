@@ -88,7 +88,7 @@ const initiatives = [
     tagline: 'Building a network of partners for an accessible society.',
     intro: [
       'Welcome to the Collaboration Programme.',
-      'Whether you would like to collaborate with us or seek our support in advancing accessibility and inclusion, we would be delighted to connect with you. Accessible Tantra invites NGOs, educational institutions, professionals, special educators, rehabilitation experts, trainers, researchers, accessibility consultants, volunteers, corporate organisations, and individuals working in the disability sector to join hands with us.',
+      'Whether you would like to collaborate with us or seek our support in advancing accessibility and inclusion, we would be delighted to connect with you. Accessible Tantra invites NGOs, educational institutions, professionals, trainers, accessibility consultants, volunteers, corporate organisations, and individuals working in the disability sector to join hands with us.',
     ],
     sections: [
       {
@@ -96,9 +96,6 @@ const initiatives = [
         list: [
           'NGOs and disability-specific advocacy groups',
           'Schools, universities and educational institutions',
-          'Rehabilitation centres and service providers',
-          'Special educators and inclusive-education practitioners',
-          'Healthcare professionals, therapists and researchers',
           'Accessibility consultants and technology experts',
           'Corporate organisations and industry leaders',
           'Government departments and public authorities',

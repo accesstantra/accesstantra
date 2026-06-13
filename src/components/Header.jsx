@@ -63,11 +63,6 @@ function Header() {
                 Home
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/about" className="site-header__link" onClick={closeMenu}>
-                About
-              </NavLink>
-            </li>
 
             <NavDropdown
               label="Programs"
@@ -92,6 +87,11 @@ function Header() {
             <li>
               <NavLink to="/contact" className="site-header__link" onClick={closeMenu}>
                 Contact
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className="site-header__link" onClick={closeMenu}>
+                About
               </NavLink>
             </li>
           </ul>

@@ -51,53 +51,8 @@ const programs = [
     formHeading: 'Registration form',
     formIntro: 'Seats are limited. Please fill in your details below to register.',
     form: {
-      type: 'native',
-      action:
-        'https://docs.google.com/forms/d/e/1FAIpQLSeyrZ4wZM7yHPWP80ts6sJ95fFZc9JgVsvIRsiWBv8NrIfkBQ/formResponse',
-      fields: [
-        { entry: 'entry.486980869', label: 'Full Name', type: 'text', required: true, autoComplete: 'name' },
-        { entry: 'entry.1456707284', label: 'Gender', type: 'radio', options: ['Male', 'Female'] },
-        { entry: 'entry.201391119', label: 'WhatsApp Number', type: 'tel', required: true, autoComplete: 'tel' },
-        { entry: 'entry.1915218494', label: 'Email Address', type: 'email', required: true, autoComplete: 'email' },
-        {
-          entry: 'entry.450056905',
-          label: 'What do you currently do?',
-          type: 'radio',
-          options: ['Student', 'Working Professional', 'Job Seeker', 'Other'],
-        },
-        {
-          entry: 'entry.1761800473',
-          label: 'Current level of Excel knowledge',
-          type: 'radio',
-          options: ['Basic', 'Intermediate', 'Advanced'],
-        },
-        {
-          entry: 'entry.461607842',
-          label: 'Preferred class timing',
-          type: 'radio',
-          options: [
-            '5:30 PM – 6:30 PM',
-            '6:00 PM – 7:00 PM',
-            '8:00 PM – 9:00 PM',
-            'Only Saturday & Sunday',
-            'Any Time',
-          ],
-        },
-        {
-          entry: 'entry.697407924',
-          label: 'What do you expect from this training program?',
-          type: 'textarea',
-        },
-        {
-          entry: 'entry.1177804315',
-          label: 'Confirmation',
-          type: 'checkbox',
-          value: 'Yes, I confirm',
-          checkboxLabel:
-            'I confirm that I have basic computer knowledge and a basic understanding of Excel.',
-          required: true,
-        },
-      ],
+      type: 'embed',
+      src: 'https://docs.google.com/forms/d/e/1FAIpQLSeyrZ4wZM7yHPWP80ts6sJ95fFZc9JgVsvIRsiWBv8NrIfkBQ/viewform?embedded=true',
     },
   },
 

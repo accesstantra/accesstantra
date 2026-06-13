@@ -30,10 +30,11 @@ function About() {
           <h2>Our journey</h2>
           <p>
             Accessible Tantra traces its roots to <strong>Android Mobile Café</strong>, a
-            YouTube-based initiative launched in June 2018 to make technology more accessible
-            for persons with visual impairments. Initially focused on Android smartphones, screen
-            readers, mobile applications, and digital services, it gradually expanded to include
-            computer training, internet usage, digital literacy, and assistive technologies.
+            YouTube-based initiative created by <strong>Mr. Sumit Mahto</strong> and launched in
+            June 2018 to make technology more accessible for persons with visual impairments.
+            Initially focused on Android smartphones, screen readers, mobile applications, and
+            digital services, it gradually expanded to include computer training, internet usage,
+            digital literacy, and assistive technologies.
           </p>
           <p>
             During the COVID-19 pandemic, online training programmes and computer classes enabled

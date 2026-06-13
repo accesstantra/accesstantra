@@ -143,6 +143,28 @@ const initiatives = [
     // No collaboration form link provided yet — placeholder via Contact CTA.
     ctas: [{ label: 'Contact us to collaborate', to: '/contact', variant: 'primary' }],
   },
+
+  {
+    id: 'digital-training-request',
+    navLabel: 'Customized Digital Training Request',
+    title: 'Customized Digital Training Request Form',
+    tagline: 'Request accessible digital training designed around your needs.',
+    intro:
+      'Tell us what you or your institution need, and we’ll design accessible, screen-reader-friendly digital training to match — for individuals, teams, or educational institutes.',
+    formHeading: 'Request customized digital training',
+    formIntro:
+      'Share your requirements using the form below and our team will get in touch.',
+    form: {
+      type: 'embed',
+      src: 'https://docs.google.com/forms/d/e/1FAIpQLSdBxDcEx5-Z_MwteciobqalonxLLCXGIpbEesVNkD_VCJOSaA/viewform?embedded=true',
+    },
+    hi: {
+      intro:
+        'हमें बताएं कि आपको या आपकी संस्था को किस प्रकार के डिजिटल प्रशिक्षण की आवश्यकता है, और हम उसके अनुरूप सुलभ, स्क्रीन-रीडर-अनुकूल प्रशिक्षण तैयार करेंगे — व्यक्तियों, टीमों अथवा शैक्षणिक संस्थानों के लिए।',
+      formIntro:
+        'नीचे दिए गए फ़ॉर्म के माध्यम से अपनी आवश्यकताएँ साझा करें और हमारी टीम आपसे संपर्क करेगी।',
+    },
+  },
 ]
 
 export function getInitiative(id) {

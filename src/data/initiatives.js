@@ -61,7 +61,7 @@ const initiatives = [
         list: [
           'Students — education, skill development, career planning, competitive exams, higher studies, accessibility solutions and independent living.',
           'Emerging professionals — workplace accessibility, career development, communication, networking, leadership and overcoming workplace barriers.',
-          'Parents and caregivers — education, accessibility, rehabilitation, assistive technologies, rights awareness and support mechanisms.',
+          'Parents and caregivers — education, accessibility, assistive technologies, rights awareness and support mechanisms.',
         ],
       },
       {

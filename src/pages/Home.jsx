@@ -94,9 +94,6 @@ function Home() {
             <Link to="/courses/excel" className="btn btn-primary">
               Excel training details
             </Link>
-            <Link to="/announcements" className="btn btn-outline">
-              All announcements
-            </Link>
           </div>
         </div>
       </section>

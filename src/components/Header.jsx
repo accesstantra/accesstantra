@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import logo from '../assets/logo.jpeg'
 import initiatives from '../data/initiatives.js'
-import infoPages from '../data/infoPages.js'
 import NavDropdown from './NavDropdown.jsx'
 import './Header.css'
 
@@ -10,9 +9,6 @@ const programItems = [
   { to: '/initiatives', label: 'All Initiatives' },
   ...initiatives.map((item) => ({ to: `/programs/${item.id}`, label: item.navLabel })),
 ]
-
-const exploreItems = infoPages.map((page) => ({ to: `/${page.id}`, label: page.navLabel }))
-const explorePrefixes = infoPages.map((page) => `/${page.id}`)
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -76,13 +72,6 @@ function Header() {
                 Courses
               </NavLink>
             </li>
-
-            <NavDropdown
-              label="Explore"
-              items={exploreItems}
-              activePrefixes={explorePrefixes}
-              onNavigate={closeMenu}
-            />
 
             <li>
               <NavLink to="/contact" className="site-header__link" onClick={closeMenu}>

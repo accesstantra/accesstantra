@@ -8,7 +8,6 @@ import CoursesLanding from './pages/CoursesLanding.jsx'
 import Contact from './pages/Contact.jsx'
 import { getInitiative } from './data/initiatives.js'
 import { getCourse } from './data/courses.js'
-import { getInfoPage } from './data/infoPages.js'
 
 function InitiativeRoute() {
   const { programId } = useParams()
@@ -32,11 +31,6 @@ function App() {
 
         <Route path="courses" element={<CoursesLanding />} />
         <Route path="courses/:courseId" element={<CourseRoute />} />
-
-        <Route path="announcements" element={<ContentPage page={getInfoPage('announcements')} />} />
-        <Route path="did-you-know" element={<ContentPage page={getInfoPage('did-you-know')} />} />
-        <Route path="media-gallery" element={<ContentPage page={getInfoPage('media-gallery')} />} />
-        <Route path="our-impact" element={<ContentPage page={getInfoPage('our-impact')} />} />
 
         <Route path="contact" element={<Contact />} />
 

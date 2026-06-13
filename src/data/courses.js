@@ -75,30 +75,6 @@ const courses = [
       formIntro: 'सीटें सीमित हैं। पंजीकरण के लिए कृपया नीचे अपना विवरण भरें।',
     },
   },
-
-  {
-    id: 'customised-training',
-    navLabel: 'Customised Training Request',
-    title: 'Customised Training Request',
-    subtitle: 'Training tailored to your needs or your organisation’s.',
-    upcoming: false,
-    tagline: 'Request accessible training designed around your requirements.',
-    intro:
-      'Tell us what you or your institution need, and we’ll design accessible, screen-reader-friendly training to match — for individuals, teams, or educational institutes.',
-    formHeading: 'Request customised training',
-    formIntro:
-      'Share your requirements using the form below and our team will get in touch.',
-    form: {
-      type: 'embed',
-      src: 'https://docs.google.com/forms/d/e/1FAIpQLSdBxDcEx5-Z_MwteciobqalonxLLCXGIpbEesVNkD_VCJOSaA/viewform?embedded=true',
-    },
-    hi: {
-      intro:
-        'हमें बताएं कि आपको या आपकी संस्था को क्या आवश्यकता है, और हम उसके अनुरूप सुलभ, स्क्रीन-रीडर-अनुकूल प्रशिक्षण तैयार करेंगे — व्यक्तियों, टीमों अथवा शैक्षणिक संस्थानों के लिए।',
-      formIntro:
-        'नीचे दिए गए फ़ॉर्म के माध्यम से अपनी आवश्यकताएँ साझा करें और हमारी टीम आपसे संपर्क करेगी।',
-    },
-  },
 ]
 
 // Configuration for the /courses landing page.
@@ -108,7 +84,11 @@ export const coursesLanding = {
     'Skill-building courses from Accessible Tantra. Browse our upcoming courses below, request training tailored to your needs, or explore our YouTube channel for free tutorials.',
   noCoursesMessage: 'There are no upcoming courses at the moment. Please check back soon.',
   standingLinks: [
-    { label: 'Request customised training', to: '/courses/customised-training', variant: 'primary' },
+    {
+      label: 'Request customized digital training',
+      to: '/programs/digital-training-request',
+      variant: 'primary',
+    },
     { label: 'Visit our YouTube channel', href: YOUTUBE_URL, variant: 'outline' },
   ],
 }

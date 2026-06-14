@@ -88,7 +88,7 @@ function Home() {
       <section className="section" aria-labelledby="home-whatsapp">
         <div className="container">
           <h2 id="home-whatsapp">Computer support on WhatsApp</h2>
-          <p>Get help with computers, phones, and assistive technology.</p>
+          <p>Get help with computers and assistive technology.</p>
           <WhatsAppJoinForm />
         </div>
       </section>

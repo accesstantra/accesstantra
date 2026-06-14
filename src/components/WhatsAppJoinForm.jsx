@@ -46,10 +46,7 @@ function WhatsAppJoinForm() {
       {open && (
         <form id="wa-join-panel" className="wa-join__panel" ref={formRef} onSubmit={handleSubmit} noValidate>
           <div className="wa-join__group">
-            <label htmlFor="wa-name">
-              Name <span className="wa-join__req" aria-hidden="true">*</span>
-              <span className="sr-only">(required)</span>
-            </label>
+            <label htmlFor="wa-name">Name</label>
             <input
               id="wa-name"
               name="name"
@@ -62,10 +59,7 @@ function WhatsAppJoinForm() {
           </div>
 
           <div className="wa-join__group">
-            <label htmlFor="wa-state">
-              State <span className="wa-join__req" aria-hidden="true">*</span>
-              <span className="sr-only">(required)</span>
-            </label>
+            <label htmlFor="wa-state">State</label>
             <input
               id="wa-state"
               name="state"
@@ -84,7 +78,7 @@ function WhatsAppJoinForm() {
           )}
 
           <button type="submit" className="btn btn-primary">
-            Request join
+            Request to join
           </button>
         </form>
       )}

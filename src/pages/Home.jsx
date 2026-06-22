@@ -10,6 +10,21 @@ import './Home.css'
 function Home() {
   return (
     <>
+      <section className="section" aria-labelledby="home-announcements">
+        <div className="container">
+          <h2 id="home-announcements">Announcements</h2>
+          <p>
+            Our <strong>Mentorship Programme</strong> is open — students, professionals, and
+            parents can get guidance from experienced mentors and subject experts.
+          </p>
+          <div className="btn-row">
+            <Link to="/programs/mentorship" className="btn btn-primary">
+              Mentorship Programme
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section section--alt" aria-labelledby="home-why">
         <div className="container">
           <h2 id="home-why">Why Accessible Tantra?</h2>

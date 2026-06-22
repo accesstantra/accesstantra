@@ -10,21 +10,6 @@ import './Home.css'
 function Home() {
   return (
     <>
-      <section className="section" aria-labelledby="home-announcements">
-        <div className="container">
-          <h2 id="home-announcements">Announcements</h2>
-          <p>
-            Registrations are open for our <strong>Free 21-Day Intermediate to Advanced Excel
-            Training</strong> — designed for visually impaired learners and screen reader users.
-          </p>
-          <div className="btn-row">
-            <Link to="/courses/excel" className="btn btn-primary">
-              Excel training details
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <section className="section section--alt" aria-labelledby="home-why">
         <div className="container">
           <h2 id="home-why">Why Accessible Tantra?</h2>

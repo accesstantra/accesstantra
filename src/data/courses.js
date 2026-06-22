@@ -4,78 +4,7 @@ import { YOUTUBE_URL } from './site.js'
 // renders via ContentPage at /courses/<id>. `upcoming: true` lists it on the
 // Courses landing page; the landing always shows the standing links below.
 
-const courses = [
-  {
-    id: 'excel',
-    navLabel: 'Excel Training',
-    title: 'Free 21-Day Intermediate to Advanced Excel Training',
-    subtitle: 'Online training designed for visually impaired learners and screen reader users.',
-    upcoming: true,
-    tagline: 'Practical, screen-reader-friendly Excel for education and the workplace.',
-    meta: { Starts: '21 June', Cost: 'Free', 'Phone / WhatsApp': '+91 9910731239' },
-    intro:
-      'A free online program for learners who already know basic Excel and want practical, screen-reader-friendly skills for education and the workplace. The focus is keyboard-based learning and real office tasks.',
-    sections: [
-      {
-        heading: 'What you will learn',
-        list: [
-          'Large data handling and data analysis',
-          'Advanced formatting, sorting and filtering',
-          'Data validation and error control',
-          'Lookup and cross-worksheet data management',
-          'Goal Seek and scenario analysis',
-          'Charts, reporting and dashboard concepts',
-          'Productivity tools and keyboard shortcuts',
-          'Practical techniques for screen reader users',
-        ],
-      },
-      {
-        heading: 'Who can join',
-        list: [
-          'Visually impaired students and job seekers',
-          'Working professionals, teachers and trainers',
-          'NGO, office and banking staff',
-          'Anyone looking to improve their Excel skills',
-        ],
-      },
-    ],
-    formHeading: 'Registration form',
-    formIntro: 'Seats are limited. Please fill in your details below to register.',
-    form: {
-      type: 'embed',
-      src: 'https://docs.google.com/forms/d/e/1FAIpQLSeyrZ4wZM7yHPWP80ts6sJ95fFZc9JgVsvIRsiWBv8NrIfkBQ/viewform?embedded=true',
-    },
-    hi: {
-      intro:
-        'यह एक निःशुल्क ऑनलाइन कार्यक्रम है, उन शिक्षार्थियों के लिए जो पहले से बेसिक एक्सेल जानते हैं और शिक्षा एवं कार्यस्थल के लिए व्यावहारिक, स्क्रीन-रीडर-अनुकूल कौशल सीखना चाहते हैं। इसमें कीबोर्ड-आधारित सीखने और वास्तविक कार्यालयी कार्यों पर ध्यान केंद्रित किया जाता है।',
-      sections: [
-        {
-          heading: 'आप क्या सीखेंगे',
-          list: [
-            'बड़े डेटा का प्रबंधन और डेटा विश्लेषण',
-            'उन्नत फ़ॉर्मेटिंग, सॉर्टिंग और फ़िल्टरिंग',
-            'डेटा सत्यापन और त्रुटि नियंत्रण',
-            'लुकअप और क्रॉस-वर्कशीट डेटा प्रबंधन',
-            'गोल सीक और परिदृश्य विश्लेषण',
-            'चार्ट, रिपोर्टिंग और डैशबोर्ड संबंधी अवधारणाएँ',
-            'उत्पादकता उपकरण और कीबोर्ड शॉर्टकट',
-            'स्क्रीन रीडर उपयोगकर्ताओं के लिए व्यावहारिक तकनीकें',
-          ],
-        },
-        {
-          heading: 'कौन शामिल हो सकता है',
-          list: [
-            'दृष्टिबाधित छात्र और नौकरी की तलाश करने वाले',
-            'कार्यरत पेशेवर, शिक्षक और प्रशिक्षक',
-            'एनजीओ, कार्यालय और बैंकिंग कर्मचारी',
-            'कोई भी व्यक्ति जो अपने एक्सेल कौशल को बेहतर बनाना चाहता है',
-          ],
-        },
-      ],
-      formIntro: 'सीटें सीमित हैं। पंजीकरण के लिए कृपया नीचे अपना विवरण भरें।',
-    },
-  },
-]
+const courses = []
 
 // Configuration for the /courses landing page.
 export const coursesLanding = {

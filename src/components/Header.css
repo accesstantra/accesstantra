@@ -66,6 +66,7 @@
   background: var(--color-bg);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .site-header__navinner {
@@ -107,6 +108,7 @@
   color: var(--color-text);
   text-decoration: none;
   font-weight: 600;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .site-header__link:hover {

@@ -9,11 +9,11 @@ function Layout() {
 
   // On every route change, scroll to the top and move focus into the main
   // content so the new page's heading is what users (and screen readers) land
-  // on — not the previous scroll position. Because outlines use :focus-visible,
-  // mouse clicks won't show an outline here, but keyboard users still get one.
+  // on. `preventScroll` stops the browser from scrolling <main> up over the
+  // header (which otherwise left the Home header off-screen).
   useEffect(() => {
     window.scrollTo(0, 0)
-    mainRef.current?.focus()
+    mainRef.current?.focus({ preventScroll: true })
   }, [pathname])
 
   return (

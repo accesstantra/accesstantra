@@ -10,13 +10,21 @@
   --color-bg: #ffffff;
   --color-bg-alt: #f5f7fb;         /* section tint */
   --color-bg-tint: #eef2ff;        /* hero / highlight tint */
+  --color-surface: #ffffff;        /* raised surfaces (cards) */
   --color-border: #cbd5e0;
   --color-focus: #2563eb;          /* focus outline */
   --color-on-primary: #ffffff;     /* text on primary-coloured fills */
   --color-error: #b91c1c;          /* form error text */
+  --color-accent: #0e7490;         /* teal accent — decorative highlights */
 
   --max-width: 1080px;
   --radius: 12px;
+  --radius-lg: 16px;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.09);
+  --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.10);
+  --shadow-lg: 0 14px 36px rgba(15, 23, 42, 0.16);
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -37,10 +45,15 @@
   --color-bg: #0f172a;
   --color-bg-alt: #1e293b;
   --color-bg-tint: #1e293b;
+  --color-surface: #1e293b;        /* cards lift above the dark page bg */
   --color-border: #334155;
   --color-focus: #93c5fd;
   --color-on-primary: #0f172a;     /* dark text on light-blue fills */
   --color-error: #f87171;
+  --color-accent: #22d3ee;         /* brighter teal for dark backgrounds */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 14px 36px rgba(0, 0, 0, 0.6);
   color-scheme: dark;
 }
 
@@ -65,14 +78,20 @@ body {
   min-height: 100vh;
 }
 
+::selection {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
 /* ---------- Typography ---------- */
 h1,
 h2,
 h3,
 h4 {
-  line-height: 1.3;
+  line-height: 1.25;
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.015em;
   margin: 0 0 0.6rem;
 }
 
@@ -158,8 +177,8 @@ a:hover {
 }
 
 .page-hero {
-  background: var(--color-bg-tint);
-  padding: 3rem 0;
+  background: linear-gradient(180deg, var(--color-bg-tint) 0%, var(--color-bg) 100%);
+  padding: 3.5rem 0 3rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -167,6 +186,54 @@ a:hover {
   font-size: 1.15rem;
   color: var(--color-text-muted);
   max-width: 60ch;
+}
+
+/* Short accent bar under section headings for visual rhythm */
+.section h2 {
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.5rem;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--color-accent);
+}
+
+/* Comfortable reading measure for body copy (leads keep their own width) */
+.section > .container > p:not(.lead) {
+  max-width: 72ch;
+}
+
+/* Prose bullet lists — accent markers. Excludes role="list" (nav, footer,
+   card grids), which keep their own styling. */
+.section ul:not([role]) {
+  list-style: none;
+  margin: 0.75rem 0;
+  padding-left: 0;
+  max-width: 72ch;
+}
+
+.section ul:not([role]) > li {
+  position: relative;
+  margin: 0.45rem 0;
+  padding-left: 1.4rem;
+}
+
+.section ul:not([role]) > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 2px;
+  background: var(--color-accent);
 }
 
 /* ---------- Grid ---------- */
@@ -190,15 +257,34 @@ a:hover {
 
 /* ---------- Card ---------- */
 .card {
-  background: var(--color-bg);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
 }
 
 .card h2,
 .card h3 {
   margin-top: 0;
+}
+
+.card h2 a,
+.card h3 a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.card h2 a:hover,
+.card h3 a:hover {
+  text-decoration: underline;
 }
 
 .card p:last-child {
@@ -240,22 +326,29 @@ a:hover {
 .btn {
   display: inline-block;
   padding: 0.7rem 1.4rem;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-on-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
   background: var(--color-primary-dark);
   color: var(--color-on-primary);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-outline {

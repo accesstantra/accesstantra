@@ -10,9 +10,9 @@ const pastEvents = [
     summary:
       'Accessible Tantra hosted a special online programme for Helen Keller Day — remembering her journey, celebrating her contributions, and closing with a warm quiz competition. The session was broadcast live and drew 80 participants who registered via Google Form.',
     winners: [
-      '1st prize — Mohd Hasif (Uttar Pradesh)',
+      '1st prize — Mohd Hashif (Uttar Pradesh)',
       '2nd prize — Nitu Kumari (Bihar)',
-      '3rd prize — Kuldeep Bahera (Chandigarh)',
+      '3rd prize — Kuldeep Behera (Chandigarh)',
     ],
     youtubeId: 'm_0UUjlJpkU',
   },

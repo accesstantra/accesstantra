@@ -6,6 +6,7 @@ import About from './pages/About.jsx'
 import InitiativesOverview from './pages/InitiativesOverview.jsx'
 import CoursesLanding from './pages/CoursesLanding.jsx'
 import Contact from './pages/Contact.jsx'
+import PastEvents from './pages/PastEvents.jsx'
 import { getInitiative } from './data/initiatives.js'
 import { getCourse } from './data/courses.js'
 
@@ -31,6 +32,8 @@ function App() {
 
         <Route path="courses" element={<CoursesLanding />} />
         <Route path="courses/:courseId" element={<CourseRoute />} />
+
+        <Route path="past-events" element={<PastEvents />} />
 
         <Route path="contact" element={<Contact />} />
 

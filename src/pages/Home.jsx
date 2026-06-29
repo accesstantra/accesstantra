@@ -13,45 +13,15 @@ function Home() {
       <section className="section" aria-labelledby="home-announcements">
         <div className="container">
           <h2 id="home-announcements">Announcements</h2>
-          <h3>Accessible Tantra Helen Keller Quiz Competition – 2026</h3>
-          <p lang="hi">
-            हेलेन केलर जी के जन्मदिवस के अवसर पर, अधिकाधिक विद्यार्थियों एवं कार्यरत
-            पेशेवरों की सहभागिता हेतु यह प्रतियोगिता सप्ताहांत में{' '}
-            <strong>28 जून 2026 (रविवार)</strong> को आयोजित की जाएगी।
-          </p>
-          <ul lang="hi">
-            <li>
-              <strong>दिनांक:</strong> 28 जून 2026 (रविवार)
-            </li>
-            <li>
-              <strong>समय:</strong> शाम 4:45 बजे (अस्थायी)
-            </li>
-            <li>
-              <strong>माध्यम:</strong> Google Forms (ऑनलाइन)
-            </li>
-            <li>
-              <strong>पंजीकरण:</strong> पूर्णतः निःशुल्क · आकर्षक पुरस्कार
-            </li>
-            <li>
-              <strong>पंजीकरण की अंतिम तिथि:</strong> 28 जून 2026, दोपहर 3 बजे से पूर्व
-            </li>
-          </ul>
-          <p lang="hi">
-            भाग लेने हेतु नीचे दिए गए WhatsApp समूह से जुड़ना अनिवार्य है — सभी नियम, अंतिम
-            समय एवं आवश्यक निर्देश केवल समूह में साझा किए जाएँगे। प्रश्न हेलेन केलर जी के जीवन,
-            उनसे जुड़े व्यक्तित्वों एवं महत्वपूर्ण घटनाओं पर आधारित होंगे।
+          <p>
+            Our <strong>Mentorship Programme</strong> is open — students, professionals, and
+            parents can get guidance from experienced mentors and subject experts. Fill in the
+            form on the programme page to request mentorship.
           </p>
           <div className="btn-row">
-            <a
-              className="btn btn-primary"
-              href="https://chat.whatsapp.com/BwnMmteQqDGCEdbI3kG5S6?s=sw&p=a&ilr=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              lang="hi"
-            >
-              WhatsApp समूह से जुड़ें{' '}
-              <span className="sr-only">(opens in a new tab)</span>
-            </a>
+            <Link to="/programs/mentorship" className="btn btn-primary">
+              Request mentorship
+            </Link>
           </div>
         </div>
       </section>

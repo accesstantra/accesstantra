@@ -99,6 +99,12 @@ function Header() {
               </li>
 
               <li>
+                <NavLink to="/past-events" className="site-header__link" onClick={closeMenu}>
+                  Past Events
+                </NavLink>
+              </li>
+
+              <li>
                 <NavLink to="/contact" className="site-header__link" onClick={closeMenu}>
                   Contact
                 </NavLink>

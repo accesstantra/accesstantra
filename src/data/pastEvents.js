@@ -8,7 +8,7 @@ const pastEvents = [
     title: 'Helen Keller Day Special Programme',
     date: '28 June 2026',
     summary:
-      'Accessible Tantra hosted a special online programme for Helen Keller Day — remembering her journey, celebrating her contributions, and closing with a warm quiz competition. The session was broadcast live and drew 80 participants who registered via Google Form.',
+      'Accessible Tantra hosted a special online programme for Helen Keller Day — remembering her journey, celebrating her contributions, and closing with a warm quiz competition. The programme was graced by chief guest Dr. Amit Kumar Sharma, Professor at Shyama Prasad Mukherji College. The session was broadcast live and drew 80 participants who registered via Google Form.',
     winners: [
       '1st prize — Mohd Hashif (Uttar Pradesh)',
       '2nd prize — Nitu Kumari (Bihar)',

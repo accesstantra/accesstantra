@@ -13,12 +13,12 @@ const courses = [
       'Screen-reader-friendly, practical Excel training for studies, employment, and professional growth.',
     upcoming: true,
     meta: {
-      'New batch starts': '1 August',
+      'New batch starts': '5 August',
       Mode: 'Live online classes',
       'Enrollment fee': '₹500 (₹250 refundable on completion)',
     },
     subtitle:
-      'A new batch of our Intermediate to Advanced Microsoft Excel training begins on 1 August. Our first batch has been completed successfully.',
+      'A new batch of our Intermediate to Advanced Microsoft Excel training begins on 5 August. Our first batch has been completed successfully.',
     intro: [
       'Following an encouraging response from learners across India, Accessible Tantra is pleased to announce admissions for the next batch of its Intermediate to Advanced Microsoft Excel Online Training.',
       'If you already have a basic understanding of Microsoft Excel and want to build practical skills for academics, employment, or professional growth, this training will help you work more efficiently and confidently. It is open to students, job seekers, working professionals, trainers, NGO staff, bank and office employees, entrepreneurs, freelancers, and anyone who wants to strengthen their Excel skills.',
@@ -67,7 +67,7 @@ const courses = [
       {
         heading: 'Batch details',
         list: [
-          'Batch starts: 1 August',
+          'Batch starts: 5 August',
           'Mode: Live online classes',
           'Limited seats available',
         ],
@@ -79,7 +79,7 @@ const courses = [
     ],
     formHeading: 'Register now',
     formIntro: [
-      'Seats are limited. Complete the registration form below to enroll for the batch starting 1 August.',
+      'Seats are limited. Complete the registration form below to enroll for the batch starting 5 August.',
       'For registration and course details, you can also call +91 99107 31239.',
     ],
     form: {

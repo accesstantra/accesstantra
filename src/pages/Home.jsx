@@ -15,7 +15,7 @@ function Home() {
           <h2 id="home-announcements">Announcements</h2>
           <p>
             <strong>New batch — Intermediate to Advanced Microsoft Excel (Online):</strong> a
-            screen-reader-friendly Excel training batch starts <strong>1 August</strong>. Learn
+            screen-reader-friendly Excel training batch starts <strong>5 August</strong>. Learn
             advanced formulas, data analysis, lookups, charts, dashboards, and productivity
             techniques through live, practical sessions. Seats are limited.
           </p>

@@ -88,11 +88,6 @@ const courses = [
     },
     ctas: [
       {
-        label: 'Open the registration form in a new tab',
-        href: 'https://docs.google.com/forms/d/e/1FAIpQLSeanNQpPB2XQIp13-TAoa2gs0kcj2uT9_GCa52_sUGLc08geQ/viewform?usp=sharing',
-        variant: 'primary',
-      },
-      {
         label: 'Join our WhatsApp channel',
         href: 'https://whatsapp.com/channel/0029VbD4Ydn2P59g03ah4T3D',
         variant: 'outline',

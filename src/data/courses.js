@@ -79,17 +79,16 @@ const courses = [
     ],
     formHeading: 'Register now',
     formIntro: [
-      'Seats are limited. Complete the registration form to enroll for the batch starting 1 August.',
+      'Seats are limited. Complete the registration form below to enroll for the batch starting 1 August.',
       'For registration and course details, you can also call +91 99107 31239.',
     ],
-    // NOTE: This form currently requires Google sign-in / a verified email, so it
-    // cannot be embedded (an embed would show a sign-in wall). Once the owner sets
-    // "Collect email addresses" to "Do not collect" (or Responder input) on the
-    // Google Form, replace the CTA below with:
-    //   form: { type: 'embed', src: '...viewform?embedded=true' }
+    form: {
+      type: 'embed',
+      src: 'https://docs.google.com/forms/d/e/1FAIpQLSeanNQpPB2XQIp13-TAoa2gs0kcj2uT9_GCa52_sUGLc08geQ/viewform?embedded=true',
+    },
     ctas: [
       {
-        label: 'Open the registration form',
+        label: 'Open the registration form in a new tab',
         href: 'https://docs.google.com/forms/d/e/1FAIpQLSeanNQpPB2XQIp13-TAoa2gs0kcj2uT9_GCa52_sUGLc08geQ/viewform?usp=sharing',
         variant: 'primary',
       },

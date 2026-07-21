@@ -14,12 +14,34 @@ function Home() {
         <div className="container">
           <h2 id="home-announcements">Announcements</h2>
           <p>
+            <strong>New batch — Intermediate to Advanced Microsoft Excel (Online):</strong> a
+            screen-reader-friendly Excel training batch starts <strong>1 August</strong>. Learn
+            advanced formulas, data analysis, lookups, charts, dashboards, and productivity
+            techniques through live, practical sessions. Seats are limited.
+          </p>
+          <div className="btn-row">
+            <Link to="/courses/excel" className="btn btn-primary">
+              Excel training details &amp; registration
+            </Link>
+          </div>
+          <p>
+            <strong>Free Computer &amp; Digital Skills Course (CDSC):</strong> a free live online
+            course for visually impaired learners starts <strong>17 August</strong>, covering
+            computer fundamentals, the internet, email, Microsoft Office, AI productivity, and
+            more.
+          </p>
+          <div className="btn-row">
+            <Link to="/courses/computer-digital-skills" className="btn btn-outline">
+              Free course details
+            </Link>
+          </div>
+          <p>
             Our <strong>Mentorship Programme</strong> is open — students, professionals, and
             parents can get guidance from experienced mentors and subject experts. Fill in the
             form on the programme page to request mentorship.
           </p>
           <div className="btn-row">
-            <Link to="/programs/mentorship" className="btn btn-primary">
+            <Link to="/programs/mentorship" className="btn btn-outline">
               Request mentorship
             </Link>
           </div>

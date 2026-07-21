@@ -146,21 +146,121 @@ const initiatives = [
 
   {
     id: 'digital-training-request',
-    navLabel: 'Customized Digital Training Request',
-    title: 'Customized Digital Training Request Form',
-    tagline: 'Request accessible digital training designed around your needs.',
-    intro:
-      'Tell us what you or your institution need, and we’ll design accessible, screen-reader-friendly digital training to match — for individuals, teams, or educational institutes.',
+    navLabel: 'Customized Digital Training',
+    title: 'Customized Digital Training',
+    tagline: 'Accessible digital training designed around your goals — not a fixed syllabus.',
+    intro: [
+      'Technology is now essential for education, employment, communication, productivity, and independent living — digital skills are no longer optional.',
+      'Every learner, however, has different goals, responsibilities, and needs. Most institutes follow a fixed syllabus and teach everyone in the same batch, so it is not always possible to focus on an individual’s goals, pace, profession, or accessibility requirements. Joining a long course just to learn one or two specific skills often means spending valuable time on topics you do not need.',
+      'At Accessible Tantra, we believe learning should be based on your goals — not a fixed syllabus. Our customized training is delivered by experienced trainers who specialise in their respective fields, and every session is designed around your objectives, current skill level, preferred pace, and accessibility requirements, so you learn exactly what you need. Whether you are an individual learner, student, working professional, teacher, senior citizen, parent or caregiver, person with a disability, educational institution, NGO, company, or government organisation, we can design a personalised training plan that fits your needs.',
+    ],
+    sections: [
+      {
+        heading: 'Training areas',
+        body:
+          'Training can be customized in one or more of the following areas, and can also be tailored to your profession or field of study — including banking, education, law, engineering, healthcare, management, research, journalism, information technology, and government services:',
+        list: [
+          'Essential computer & digital skills for everyday independence',
+          'Microsoft Office, Google Workspace & online forms',
+          'Microsoft Excel with AI & data productivity',
+          'Artificial intelligence (AI) & productivity tools',
+          'Screen-reader training',
+          'PDF, document & digital accessibility',
+          'Android, iPhone & MacBook accessibility',
+          'Braille & digital braille technology',
+          'Assistive-devices training',
+          'Accessible content & alternative learning material creation (accessible documents, DAISY, EPUB, accessible presentations, and more)',
+          'Accessible audio & video editing',
+          'Programming & technical skills',
+          'Hindi & English typing',
+          'Any other customized digital learning requirement',
+        ],
+      },
+      {
+        heading: 'Why customized training?',
+        body:
+          'Not everyone needs a complete computer course. Sometimes you only need to learn one specific skill or solve one particular challenge. For example:',
+        list: [
+          'A law student, advocate, or legal professional who uses a screen reader may want to learn only how to independently access court websites, legal research portals, e-filing systems, or legal databases.',
+          'A bank employee may need only Microsoft Excel with AI for reports, data analysis, dashboards, or daily office work.',
+          'A teacher may simply want to create accessible study materials, presentations, PDFs, DAISY, or EPUB files for students with disabilities.',
+          'A senior citizen who has just bought their first smartphone may want to learn WhatsApp, YouTube, video calling, digital payments, healthcare apps, online services, or accessibility features.',
+          'Someone who has purchased a new iPhone, MacBook, braille display, notetaker, or embosser may want to learn to use that specific device effectively.',
+        ],
+      },
+      {
+        heading: 'Learn at your convenience',
+        body: [
+          'Whether you need one-to-one training, a small group session, or a customized workshop for your school, college, workplace, or organisation, we will design the learning experience around your requirements. Our patient, step-by-step approach is well suited to senior citizens and first-time technology users who want to build confidence at a comfortable pace.',
+          'Training sessions are scheduled according to your availability. We offer online training across India, so you can learn from the comfort of your home or workplace. Offline training may also be available in selected locations, depending on trainer availability and the type of training required.',
+        ],
+      },
+      {
+        heading: 'Ready to get started?',
+        body:
+          'Tell us what you would like to learn, why you would like to learn it, and what you hope to achieve — whether you need help with a single topic or a comprehensive learning plan. Complete the form below and we will get in touch to discuss the best training plan for you.',
+      },
+    ],
     formHeading: 'Request customized digital training',
     formIntro:
       'Share your requirements using the form below and our team will get in touch.',
     form: {
       type: 'embed',
-      src: 'https://docs.google.com/forms/d/e/1FAIpQLSdBxDcEx5-Z_MwteciobqalonxLLCXGIpbEesVNkD_VCJOSaA/viewform?embedded=true',
+      src: 'https://docs.google.com/forms/d/e/1FAIpQLSepOWI1vEbwe4XOdl0n0yGCfFWMAxzQFyXgrpMuXooaDmDspA/viewform?embedded=true',
     },
     hi: {
-      intro:
-        'हमें बताएं कि आपको या आपकी संस्था को किस प्रकार के डिजिटल प्रशिक्षण की आवश्यकता है, और हम उसके अनुरूप सुलभ, स्क्रीन-रीडर-अनुकूल प्रशिक्षण तैयार करेंगे — व्यक्तियों, टीमों अथवा शैक्षणिक संस्थानों के लिए।',
+      intro: [
+        'तकनीक अब शिक्षा, रोज़गार, संचार, उत्पादकता और स्वतंत्र जीवन का अनिवार्य हिस्सा बन चुकी है — डिजिटल कौशल अब विकल्प नहीं, बल्कि आवश्यकता है।',
+        'हालाँकि, हर सीखने वाले के लक्ष्य, ज़िम्मेदारियाँ और आवश्यकताएँ अलग-अलग होती हैं। अधिकांश संस्थान एक निश्चित पाठ्यक्रम का पालन करते हैं और सभी को एक ही बैच में पढ़ाते हैं, इसलिए हर व्यक्ति के लक्ष्य, गति, पेशे या सुलभता आवश्यकताओं पर ध्यान देना हमेशा संभव नहीं हो पाता। केवल एक-दो विशेष कौशल सीखने के लिए किसी लंबे कोर्स में शामिल होने का अर्थ अक्सर उन विषयों पर समय लगाना होता है जिनकी आपको आवश्यकता ही नहीं।',
+        'एक्सेसिबल तंत्र में हमारा मानना है कि सीखना आपके लक्ष्यों पर आधारित होना चाहिए — किसी निश्चित पाठ्यक्रम पर नहीं। हमारा अनुकूलित प्रशिक्षण अपने-अपने क्षेत्रों के अनुभवी एवं विशेषज्ञ प्रशिक्षकों द्वारा दिया जाता है, और हर सत्र आपके उद्देश्यों, वर्तमान कौशल स्तर, पसंदीदा गति और सुलभता आवश्यकताओं के अनुसार तैयार किया जाता है, ताकि आप ठीक वही सीखें जिसकी आपको आवश्यकता है। चाहे आप एक व्यक्तिगत शिक्षार्थी, छात्र, कार्यरत पेशेवर, शिक्षक, वरिष्ठ नागरिक, अभिभावक या देखभालकर्ता, दिव्यांगजन, शैक्षणिक संस्थान, एनजीओ, कंपनी अथवा सरकारी संगठन हों — हम आपकी आवश्यकताओं के अनुरूप एक व्यक्तिगत प्रशिक्षण योजना तैयार कर सकते हैं।',
+      ],
+      sections: [
+        {
+          heading: 'प्रशिक्षण के क्षेत्र',
+          body:
+            'प्रशिक्षण को निम्नलिखित में से एक या अधिक क्षेत्रों में अनुकूलित किया जा सकता है, और इसे आपके पेशे या अध्ययन क्षेत्र — जैसे बैंकिंग, शिक्षा, कानून, इंजीनियरिंग, स्वास्थ्य सेवा, प्रबंधन, अनुसंधान, पत्रकारिता, सूचना प्रौद्योगिकी और सरकारी सेवाओं — के अनुसार भी ढाला जा सकता है:',
+          list: [
+            'रोज़मर्रा की स्वतंत्रता के लिए आवश्यक कंप्यूटर एवं डिजिटल कौशल',
+            'माइक्रोसॉफ्ट ऑफिस, गूगल वर्कस्पेस एवं ऑनलाइन फ़ॉर्म',
+            'एआई एवं डेटा उत्पादकता के साथ माइक्रोसॉफ्ट एक्सेल',
+            'आर्टिफिशियल इंटेलिजेंस (एआई) एवं उत्पादकता उपकरण',
+            'स्क्रीन रीडर प्रशिक्षण',
+            'पीडीएफ, दस्तावेज़ एवं डिजिटल सुलभता',
+            'एंड्रॉइड, आईफोन एवं मैकबुक सुलभता',
+            'ब्रेल एवं डिजिटल ब्रेल तकनीक',
+            'सहायक उपकरण प्रशिक्षण',
+            'सुलभ सामग्री एवं वैकल्पिक शिक्षण सामग्री निर्माण (सुलभ दस्तावेज़, DAISY, EPUB, सुलभ प्रस्तुतियाँ, और अधिक)',
+            'सुलभ ऑडियो एवं वीडियो संपादन',
+            'प्रोग्रामिंग एवं तकनीकी कौशल',
+            'हिंदी एवं अंग्रेज़ी टाइपिंग',
+            'कोई अन्य अनुकूलित डिजिटल शिक्षण आवश्यकता',
+          ],
+        },
+        {
+          heading: 'अनुकूलित प्रशिक्षण क्यों?',
+          body:
+            'हर किसी को संपूर्ण कंप्यूटर कोर्स की आवश्यकता नहीं होती। कभी-कभी आपको केवल एक विशेष कौशल सीखना या एक विशेष समस्या हल करनी होती है। उदाहरण के लिए:',
+          list: [
+            'स्क्रीन रीडर का उपयोग करने वाला कोई विधि छात्र, अधिवक्ता या कानूनी पेशेवर केवल यह सीखना चाह सकता है कि अदालत की वेबसाइटों, कानूनी शोध पोर्टलों, ई-फाइलिंग प्रणालियों या कानूनी डेटाबेस तक स्वतंत्र रूप से कैसे पहुँचा जाए।',
+            'कोई बैंक कर्मचारी केवल रिपोर्ट, डेटा विश्लेषण, डैशबोर्ड या दैनिक कार्यालय कार्य के लिए एआई के साथ माइक्रोसॉफ्ट एक्सेल सीखना चाह सकता है।',
+            'कोई शिक्षक केवल दिव्यांग विद्यार्थियों के लिए सुलभ अध्ययन सामग्री, प्रस्तुतियाँ, पीडीएफ, DAISY या EPUB फ़ाइलें बनाना सीखना चाह सकता है।',
+            'कोई वरिष्ठ नागरिक, जिसने अभी अपना पहला स्मार्टफोन खरीदा है, केवल व्हाट्सएप, यूट्यूब, वीडियो कॉलिंग, डिजिटल भुगतान, स्वास्थ्य ऐप्स, ऑनलाइन सेवाएँ या सुलभता सुविधाएँ सीखना चाह सकता है।',
+            'जिसने कोई नया आईफोन, मैकबुक, ब्रेल डिस्प्ले, नोटटेकर या एम्बॉसर खरीदा है, वह केवल अपने उस उपकरण का प्रभावी ढंग से उपयोग करना सीखना चाह सकता है।',
+          ],
+        },
+        {
+          heading: 'अपनी सुविधानुसार सीखें',
+          body: [
+            'चाहे आपको एक-से-एक प्रशिक्षण चाहिए हो, छोटे समूह का सत्र, या आपके विद्यालय, महाविद्यालय, कार्यस्थल या संस्था के लिए एक अनुकूलित कार्यशाला — हम आपकी आवश्यकताओं के अनुसार सीखने का अनुभव तैयार करेंगे। हमारा धैर्यपूर्ण, चरण-दर-चरण तरीका उन वरिष्ठ नागरिकों और पहली बार तकनीक का उपयोग करने वालों के लिए विशेष रूप से उपयुक्त है जो सहज गति से आत्मविश्वास बढ़ाना चाहते हैं।',
+            'प्रशिक्षण सत्र आपकी उपलब्धता के अनुसार निर्धारित किए जाते हैं। हम पूरे भारत में ऑनलाइन प्रशिक्षण प्रदान करते हैं, ताकि आप अपने घर या कार्यस्थल से सीख सकें। चुनिंदा स्थानों पर, प्रशिक्षक की उपलब्धता एवं प्रशिक्षण के प्रकार के आधार पर, ऑफलाइन प्रशिक्षण भी उपलब्ध हो सकता है।',
+          ],
+        },
+        {
+          heading: 'शुरू करने के लिए तैयार हैं?',
+          body:
+            'हमें बताएं कि आप क्या सीखना चाहते हैं, क्यों सीखना चाहते हैं और क्या हासिल करना चाहते हैं — चाहे वह एक विषय हो या एक संपूर्ण योजना। नीचे दिया गया फ़ॉर्म भरें और हम आपके लिए सर्वोत्तम प्रशिक्षण योजना पर चर्चा करने के लिए संपर्क करेंगे।',
+        },
+      ],
       formIntro:
         'नीचे दिए गए फ़ॉर्म के माध्यम से अपनी आवश्यकताएँ साझा करें और हमारी टीम आपसे संपर्क करेगी।',
     },

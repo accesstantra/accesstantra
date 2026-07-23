@@ -1,7 +1,8 @@
 // Research & Survey — a standalone page (its own navbar item) rendered by
 // ContentPage at /research. Add new surveys/studies as extra `sections` or
 // `ctas`. External survey links use `href` (open in a new tab); the Google
-// Form requires sign-in, so we link out to it rather than embedding it.
+// Form is linked out to rather than embedded (it records the responder's
+// Google account and may require sign-in).
 
 const research = {
   title: 'Research & Survey',
@@ -13,9 +14,15 @@ const research = {
   ],
   sections: [
     {
-      heading: 'Current survey',
-      body:
-        'We are currently inviting participation in a survey to better understand accessibility needs, experiences, and challenges. Your input will directly inform our future initiatives and recommendations. The survey is short, and your responses are appreciated. We kindly invite you to participate and take this survey using the link below.',
+      heading:
+        'Survey of Accessible Schooling in Blind Schools Across India',
+      body: [
+        'We are currently conducting a nationwide survey of accessible schooling in blind schools across India. Your participation is vital to the success of this initiative.',
+        'We sincerely request every school administration, principal, headmaster, teacher, staff member, student, and parent to complete this questionnaire honestly and accurately. Please provide true information based on the actual conditions of your school or institution, without any fear, hesitation, bias, prejudice, or preconceived notions.',
+        'Please note: this survey is not an inspection, audit, ranking, accreditation exercise, or evaluation of any school. The information collected will be used solely for research, policy advocacy, and improving educational opportunities for students with visual impairments. Individual responses and institutional information will be treated with due confidentiality and will not be used to unfairly judge or disadvantage any school.',
+        'Your honest participation today can help shape better policies, strengthen educational institutions, mobilise meaningful support, and create a more accessible future for present and future generations of blind and visually impaired students.',
+        'We kindly invite you to participate and take this survey using the link below.',
+      ],
     },
   ],
   ctas: [

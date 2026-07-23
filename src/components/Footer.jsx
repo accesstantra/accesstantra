@@ -6,6 +6,7 @@ const quickLinks = [
   { to: '/initiatives', label: 'Initiatives' },
   { to: '/courses', label: 'Courses' },
   { to: '/past-events', label: 'Past Events' },
+  { to: '/research', label: 'Research & Survey' },
   { to: '/contact', label: 'Contact' },
   { to: '/about', label: 'About' },
 ]

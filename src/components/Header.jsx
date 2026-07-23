@@ -105,6 +105,12 @@ function Header() {
               </li>
 
               <li>
+                <NavLink to="/research" className="site-header__link" onClick={closeMenu}>
+                  Research &amp; Survey
+                </NavLink>
+              </li>
+
+              <li>
                 <NavLink to="/contact" className="site-header__link" onClick={closeMenu}>
                   Contact
                 </NavLink>

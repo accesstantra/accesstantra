@@ -9,6 +9,7 @@ import Contact from './pages/Contact.jsx'
 import PastEvents from './pages/PastEvents.jsx'
 import { getInitiative } from './data/initiatives.js'
 import { getCourse } from './data/courses.js'
+import research from './data/research.js'
 
 function InitiativeRoute() {
   const { programId } = useParams()
@@ -34,6 +35,8 @@ function App() {
         <Route path="courses/:courseId" element={<CourseRoute />} />
 
         <Route path="past-events" element={<PastEvents />} />
+
+        <Route path="research" element={<ContentPage page={research} />} />
 
         <Route path="contact" element={<Contact />} />
 

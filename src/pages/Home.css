@@ -1,2 +1,20 @@
 /* Home uses shared utility classes from index.css. The old hero styles were
    removed when the brand (title, tagline, logo) moved into the global header. */
+
+/* Promotional banner at the top of the Home page. The image keeps its natural
+   1299x891 aspect ratio, scales fluidly to the container width, and is capped
+   so it never dominates the viewport on large screens. */
+.home-banner {
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.home-banner__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}

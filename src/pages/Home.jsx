@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import initiatives from '../data/initiatives.js'
 import { YOUTUBE_URL } from '../data/site.js'
 import WhatsAppJoinForm from '../components/WhatsAppJoinForm.jsx'
+import banner from '../assets/banner.jpeg'
 import './Home.css'
 
 // The site title, tagline, and logo now live in the global header, so Home
@@ -10,6 +11,21 @@ import './Home.css'
 function Home() {
   return (
     <>
+      <section className="section home-banner" aria-labelledby="home-banner-heading">
+        <div className="container">
+          <h2 id="home-banner-heading" className="sr-only">
+            Accessible Tantra
+          </h2>
+          <img
+            src={banner}
+            className="home-banner__img"
+            width="1299"
+            height="891"
+            alt="Accessible Tantra — Democratizing access, empowering abilities. Making every system and every space accessible across disabilities through education, technology, employment, mentorship, and community. An illustration shows diverse hands using assistive technology, with a bionic hand and a human hand meeting in a handshake to represent collaboration."
+          />
+        </div>
+      </section>
+
       <section className="section" aria-labelledby="home-announcements">
         <div className="container">
           <h2 id="home-announcements">Announcements</h2>

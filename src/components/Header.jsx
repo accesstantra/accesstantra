@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
-import logo from '../assets/logo.jpeg'
+import logo from '../assets/logo.png'
 import initiatives from '../data/initiatives.js'
 import NavDropdown from './NavDropdown.jsx'
 import ThemeToggle from './ThemeToggle.jsx'

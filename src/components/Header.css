@@ -43,7 +43,9 @@
 
 .site-header__logo {
   display: block;
-  border-radius: 12px;
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 

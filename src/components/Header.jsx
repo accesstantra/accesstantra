@@ -46,8 +46,8 @@ function Header() {
             src={logo}
             alt="Accessible Tantra logo"
             className="site-header__logo"
-            width="84"
-            height="84"
+            width="96"
+            height="96"
           />
         </div>
 

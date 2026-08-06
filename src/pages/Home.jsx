@@ -30,14 +30,14 @@ function Home() {
         <div className="container">
           <h2 id="home-announcements">Announcements</h2>
           <p>
-            <strong>New batch — Intermediate to Advanced Microsoft Excel (Online):</strong> a
-            screen-reader-friendly Excel training batch starts <strong>5 August</strong>. Learn
-            advanced formulas, data analysis, lookups, charts, dashboards, and productivity
-            techniques through live, practical sessions. Seats are limited.
+            <strong>Microsoft Excel Basic to Advanced — FREE Online Training:</strong> a
+            screen-reader-friendly, live online Excel course starts <strong>17 August</strong>.
+            Learn step by step from the basics to advanced formulas, functions, data analysis,
+            charts, and shortcuts — completely free.
           </p>
           <div className="btn-row">
             <Link to="/courses/excel" className="btn btn-primary">
-              Excel training details &amp; registration
+              Excel course details &amp; enrollment
             </Link>
           </div>
           <p>

@@ -57,7 +57,7 @@ function ContentPage({ page }) {
   }
 
   const hasFormSection = Boolean(page.formHeading || page.form)
-  const hasEmbeddedForm = Boolean(page.form)
+  const hasEmbeddedForm = Boolean(page.form && page.form.src)
   const hasHindi = Boolean(page.hi)
   // Description fields (intro, sections, formIntro) come from the Hindi object
   // when Hindi is selected; everything else stays in English.
@@ -142,7 +142,7 @@ function ContentPage({ page }) {
                 <Paragraphs text={desc.formIntro} />
               </div>
             )}
-            {page.form?.type === 'embed' && (
+            {page.form?.type === 'embed' && page.form.src && (
               <iframe
                 className="program-embed"
                 src={page.form.src}

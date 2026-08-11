@@ -1,9 +1,26 @@
 import { Link } from 'react-router-dom'
 import initiatives from '../data/initiatives.js'
+import announcementsData from '../data/announcements.json'
 import { YOUTUBE_URL } from '../data/site.js'
 import WhatsAppJoinForm from '../components/WhatsAppJoinForm.jsx'
 import banner from '../assets/banner.jpeg'
 import './Home.css'
+
+const announcements = announcementsData.announcements
+
+function AnnouncementButton({ label, link, variant }) {
+  const className = `btn btn-${variant || 'primary'}`
+  const isExternal = /^https?:\/\//.test(link)
+  return isExternal ? (
+    <a className={className} href={link} target="_blank" rel="noopener noreferrer">
+      {label} <span className="sr-only">(opens in a new tab)</span>
+    </a>
+  ) : (
+    <Link to={link} className={className}>
+      {label}
+    </Link>
+  )
+}
 
 // The site title, tagline, and logo now live in the global header, so Home
 // starts straight into its content sections. The header provides this page's
@@ -29,38 +46,22 @@ function Home() {
       <section className="section" aria-labelledby="home-announcements">
         <div className="container">
           <h2 id="home-announcements">Announcements</h2>
-          <p>
-            <strong>Microsoft Excel Basic to Advanced — FREE Online Training:</strong> a
-            screen-reader-friendly, live online Excel course starts <strong>17 August</strong>.
-            Learn step by step from the basics to advanced formulas, functions, data analysis,
-            charts, and shortcuts — completely free.
-          </p>
-          <div className="btn-row">
-            <Link to="/courses/excel" className="btn btn-primary">
-              Excel course details &amp; enrollment
-            </Link>
-          </div>
-          <p>
-            <strong>Free Computer &amp; Digital Skills Course (CDSC):</strong> a free live online
-            course for visually impaired learners starts <strong>17 August</strong>, covering
-            computer fundamentals, the internet, email, Microsoft Office, AI productivity, and
-            more.
-          </p>
-          <div className="btn-row">
-            <Link to="/courses/computer-digital-skills" className="btn btn-outline">
-              Free course details
-            </Link>
-          </div>
-          <p>
-            Our <strong>Mentorship Programme</strong> is open — students, professionals, and
-            parents can get guidance from experienced mentors and subject experts. Fill in the
-            form on the programme page to request mentorship.
-          </p>
-          <div className="btn-row">
-            <Link to="/programs/mentorship" className="btn btn-outline">
-              Request mentorship
-            </Link>
-          </div>
+          {announcements.map((item, i) => (
+            <div key={item.title || i}>
+              <p>
+                {item.title && <strong>{item.title}:</strong>} {item.body}
+              </p>
+              {item.buttonLabel && item.link && (
+                <div className="btn-row">
+                  <AnnouncementButton
+                    label={item.buttonLabel}
+                    link={item.link}
+                    variant={item.variant}
+                  />
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 

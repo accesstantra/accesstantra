@@ -1,0 +1,354 @@
+# Sveltia CMS configuration — the friendly editor at /admin.
+# Docs: https://sveltiacms.app/  (Netlify/Decap-compatible config)
+#
+# HOW LOGIN WORKS: content is saved as commits to this GitHub repo, which
+# triggers the site to rebuild and republish. See docs/CONTENT-EDITING.md for
+# the one-time setup that lets editors sign in.
+
+backend:
+  name: github
+  repo: accesstantra/accesstantra
+  branch: main
+  # After you deploy the Sveltia CMS Authenticator (see docs/CONTENT-EDITING.md),
+  # uncomment the next line and set it to your Cloudflare Worker URL so editors
+  # get a "Sign in with GitHub" button. Without it, sign in with a GitHub
+  # personal access token (also described in the docs).
+  # base_url: https://sveltia-cms-auth.YOURNAME.workers.dev
+
+# Where uploaded images are stored in the repo, and the URL they resolve to.
+media_folder: public/uploads
+public_folder: /uploads
+
+# Show a "Site" link back to the live homepage.
+site_url: https://accesstantra.com
+display_url: https://accesstantra.com
+
+# Editors see clear, friendly labels; the underlying files stay valid.
+collections:
+  # ---------------------------------------------------------------------------
+  # Announcements — the list at the top of the Home page.
+  # ---------------------------------------------------------------------------
+  - name: announcements
+    label: Announcements (Home page)
+    description: >-
+      The notices shown under "Announcements" on the home page. Add, edit,
+      reorder, or remove items. Each shows a bold title, a sentence, and a
+      button.
+    files:
+      - name: announcements
+        label: Announcements
+        file: src/data/announcements.json
+        description: The list of home-page announcements, shown top to bottom.
+        fields:
+          - name: announcements
+            label: Announcements
+            label_singular: Announcement
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Title (shown in bold), widget: string }
+              - {
+                  name: body,
+                  label: Message,
+                  widget: text,
+                  hint: The sentence shown after the title.,
+                }
+              - {
+                  name: buttonLabel,
+                  label: Button text,
+                  widget: string,
+                  required: false,
+                }
+              - {
+                  name: link,
+                  label: Button link,
+                  widget: string,
+                  required: false,
+                  hint: 'An internal page like /courses/excel, or a full https:// link.',
+                }
+              - name: variant
+                label: Button style
+                widget: select
+                default: primary
+                options: [primary, outline]
+
+  # ---------------------------------------------------------------------------
+  # Courses — the pages under /courses/<id>.
+  # ---------------------------------------------------------------------------
+  - name: courses
+    label: Courses
+    description: >-
+      Courses shown on the Courses page and at /courses/<id>. Add or remove a
+      course here; the site's menu and listings update automatically.
+    files:
+      - name: courses
+        label: Courses
+        file: src/data/courses.json
+        fields:
+          - name: courses
+            label: Courses
+            label_singular: Course
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - {
+                  name: id,
+                  label: ID (used in the web address),
+                  widget: string,
+                  hint: 'Lowercase, no spaces, e.g. excel. Changing it changes the page link.',
+                }
+              - { name: navLabel, label: Menu label, widget: string }
+              - { name: title, label: Title (page heading), widget: string }
+              - { name: tagline, label: Tagline (one line), widget: string, required: false }
+              - {
+                  name: upcoming,
+                  label: Show in "Upcoming courses" list,
+                  widget: boolean,
+                  default: true,
+                }
+              - { name: subtitle, label: Subtitle (under the heading), widget: string, required: false }
+              - name: meta
+                label: Quick facts (chips under the title)
+                widget: list
+                required: false
+                label_singular: Fact
+                summary: '{{fields.key}}: {{fields.value}}'
+                fields:
+                  - { name: key, label: Label, widget: string }
+                  - { name: value, label: Value, widget: string }
+              - name: intro
+                label: Introduction paragraphs
+                widget: list
+                required: false
+                field: { name: paragraph, label: Paragraph, widget: text }
+              - name: sections
+                label: Content sections
+                widget: list
+                required: false
+                label_singular: Section
+                summary: '{{fields.heading}}'
+                fields:
+                  - { name: heading, label: Section heading, widget: string, required: false }
+                  - name: body
+                    label: Paragraphs
+                    widget: list
+                    required: false
+                    field: { name: paragraph, label: Paragraph, widget: text }
+                  - name: list
+                    label: Bullet points
+                    widget: list
+                    required: false
+                    field: { name: item, label: Bullet, widget: string }
+              - { name: formHeading, label: Form section heading, widget: string, required: false }
+              - name: formIntro
+                label: Text above the form
+                widget: list
+                required: false
+                field: { name: paragraph, label: Paragraph, widget: text }
+              - name: form
+                label: Embedded form (optional)
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { name: type, label: Type, widget: hidden, default: embed }
+                  - {
+                      name: src,
+                      label: Google Form embed URL,
+                      widget: string,
+                      required: false,
+                      hint: 'Paste the Google Form embed URL that ends with viewform?embedded=true',
+                    }
+              - name: ctas
+                label: Buttons
+                widget: list
+                required: false
+                label_singular: Button
+                summary: '{{fields.label}}'
+                fields:
+                  - { name: label, label: Button text, widget: string }
+                  - {
+                      name: to,
+                      label: Internal page,
+                      widget: string,
+                      required: false,
+                      hint: 'e.g. /contact . Leave empty if using an external link.',
+                    }
+                  - {
+                      name: href,
+                      label: External link,
+                      widget: string,
+                      required: false,
+                      hint: 'e.g. https://... . Leave empty if using an internal page.',
+                    }
+                  - name: variant
+                    label: Style
+                    widget: select
+                    default: primary
+                    options: [primary, outline]
+              - { name: returnHome, label: Show "Return to home" button, widget: boolean, default: true, required: false }
+              - name: hi
+                label: Hindi translation (optional)
+                widget: object
+                required: false
+                collapsed: true
+                hint: If filled, an English/हिन्दी toggle appears on the page.
+                fields:
+                  - name: intro
+                    label: Introduction paragraphs (Hindi)
+                    widget: list
+                    required: false
+                    field: { name: paragraph, label: Paragraph, widget: text }
+                  - name: sections
+                    label: Content sections (Hindi)
+                    widget: list
+                    required: false
+                    label_singular: Section
+                    summary: '{{fields.heading}}'
+                    fields:
+                      - { name: heading, label: Section heading, widget: string, required: false }
+                      - name: body
+                        label: Paragraphs
+                        widget: list
+                        required: false
+                        field: { name: paragraph, label: Paragraph, widget: text }
+                      - name: list
+                        label: Bullet points
+                        widget: list
+                        required: false
+                        field: { name: item, label: Bullet, widget: string }
+                  - name: formIntro
+                    label: Text above the form (Hindi)
+                    widget: list
+                    required: false
+                    field: { name: paragraph, label: Paragraph, widget: text }
+
+  # ---------------------------------------------------------------------------
+  # Programs — the "Programs" dropdown items and /programs/<id> pages.
+  # ---------------------------------------------------------------------------
+  - name: programs
+    label: Programs (initiatives)
+    description: >-
+      The items in the "Programs" menu and at /programs/<id>. Add or remove a
+      program here; the menu, the Home grid, and the listings update
+      automatically.
+    files:
+      - name: programs
+        label: Programs
+        file: src/data/initiatives.json
+        fields:
+          - {
+              name: initiativesIntro,
+              label: Intro text on the "Initiatives" page,
+              widget: text,
+            }
+          - name: initiatives
+            label: Programs
+            label_singular: Program
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - {
+                  name: id,
+                  label: ID (used in the web address),
+                  widget: string,
+                  hint: 'Lowercase, no spaces, e.g. mentorship. Changing it changes the page link.',
+                }
+              - { name: navLabel, label: Menu label, widget: string }
+              - { name: title, label: Title (page heading), widget: string }
+              - { name: tagline, label: Tagline (shown on cards), widget: string, required: false }
+              - { name: subtitle, label: Subtitle (under the heading), widget: string, required: false }
+              - name: intro
+                label: Introduction paragraphs
+                widget: list
+                required: false
+                field: { name: paragraph, label: Paragraph, widget: text }
+              - name: sections
+                label: Content sections
+                widget: list
+                required: false
+                label_singular: Section
+                summary: '{{fields.heading}}'
+                fields:
+                  - { name: heading, label: Section heading, widget: string, required: false }
+                  - name: body
+                    label: Paragraphs
+                    widget: list
+                    required: false
+                    field: { name: paragraph, label: Paragraph, widget: text }
+                  - name: list
+                    label: Bullet points
+                    widget: list
+                    required: false
+                    field: { name: item, label: Bullet, widget: string }
+              - { name: formHeading, label: Form section heading, widget: string, required: false }
+              - name: formIntro
+                label: Text above the form
+                widget: list
+                required: false
+                field: { name: paragraph, label: Paragraph, widget: text }
+              - name: form
+                label: Embedded form (optional)
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { name: type, label: Type, widget: hidden, default: embed }
+                  - {
+                      name: src,
+                      label: Google Form embed URL,
+                      widget: string,
+                      required: false,
+                      hint: 'Paste the Google Form embed URL that ends with viewform?embedded=true',
+                    }
+              - name: ctas
+                label: Buttons
+                widget: list
+                required: false
+                label_singular: Button
+                summary: '{{fields.label}}'
+                fields:
+                  - { name: label, label: Button text, widget: string }
+                  - { name: to, label: Internal page, widget: string, required: false, hint: 'e.g. /contact' }
+                  - { name: href, label: External link, widget: string, required: false, hint: 'e.g. https://...' }
+                  - name: variant
+                    label: Style
+                    widget: select
+                    default: primary
+                    options: [primary, outline]
+              - { name: returnHome, label: Show "Return to home" button, widget: boolean, default: false, required: false }
+              - name: hi
+                label: Hindi translation (optional)
+                widget: object
+                required: false
+                collapsed: true
+                hint: If filled, an English/हिन्दी toggle appears on the page.
+                fields:
+                  - name: intro
+                    label: Introduction paragraphs (Hindi)
+                    widget: list
+                    required: false
+                    field: { name: paragraph, label: Paragraph, widget: text }
+                  - name: sections
+                    label: Content sections (Hindi)
+                    widget: list
+                    required: false
+                    label_singular: Section
+                    summary: '{{fields.heading}}'
+                    fields:
+                      - { name: heading, label: Section heading, widget: string, required: false }
+                      - name: body
+                        label: Paragraphs
+                        widget: list
+                        required: false
+                        field: { name: paragraph, label: Paragraph, widget: text }
+                      - name: list
+                        label: Bullet points
+                        widget: list
+                        required: false
+                        field: { name: item, label: Bullet, widget: string }
+                  - name: formIntro
+                    label: Text above the form (Hindi)
+                    widget: list
+                    required: false
+                    field: { name: paragraph, label: Paragraph, widget: text }

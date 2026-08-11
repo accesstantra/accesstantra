@@ -197,8 +197,10 @@ const initiatives = [
       },
       {
         heading: 'Ready to get started?',
-        body:
+        body: [
           'Tell us what you would like to learn, why you would like to learn it, and what you hope to achieve — whether you need help with a single topic or a comprehensive learning plan. Complete the form below and we will get in touch to discuss the best training plan for you.',
+          'Please note that for certain specialised courses or training, we may not always be able to provide the entire training ourselves from scratch. In such cases, we will do our best to connect you with a related person or organisation who can offer the support you need.',
+        ],
       },
     ],
     formHeading: 'Request customized digital training',
@@ -257,8 +259,10 @@ const initiatives = [
         },
         {
           heading: 'शुरू करने के लिए तैयार हैं?',
-          body:
+          body: [
             'हमें बताएं कि आप क्या सीखना चाहते हैं, क्यों सीखना चाहते हैं और क्या हासिल करना चाहते हैं — चाहे वह एक विषय हो या एक संपूर्ण योजना। नीचे दिया गया फ़ॉर्म भरें और हम आपके लिए सर्वोत्तम प्रशिक्षण योजना पर चर्चा करने के लिए संपर्क करेंगे।',
+            'कृपया ध्यान दें कि कुछ विशेष पाठ्यक्रमों या प्रशिक्षण के लिए, हम हमेशा संपूर्ण प्रशिक्षण स्वयं शुरुआत से प्रदान करने में सक्षम नहीं हो सकते। ऐसी स्थिति में, हम आपको किसी संबंधित व्यक्ति या संगठन से जोड़ने का पूरा प्रयास करेंगे जो आपको आवश्यक सहायता प्रदान कर सके।',
+          ],
         },
       ],
       formIntro:

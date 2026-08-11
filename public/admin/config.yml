@@ -9,10 +9,11 @@ backend:
   name: github
   repo: accesstantra/accesstantra
   branch: main
-  # After you deploy the Sveltia CMS Authenticator (see docs/CONTENT-EDITING.md),
-  # uncomment the next line and set it to your Cloudflare Worker URL so editors
-  # get a "Sign in with GitHub" button. Without it, sign in with a GitHub
-  # personal access token (also described in the docs).
+  # RECOMMENDED sign-in: deploy the Sveltia CMS Authenticator (a small, free
+  # Cloudflare Worker) so editors get a secure "Sign in with GitHub" button and
+  # never handle any token. Then uncomment the next line and set it to your
+  # Worker URL. See docs/CONTENT-EDITING.md (Option 1). A personal access token
+  # also works without this, but is only meant as a quick test for one admin.
   # base_url: https://sveltia-cms-auth.YOURNAME.workers.dev
 
 # Where uploaded images are stored in the repo, and the URL they resolve to.

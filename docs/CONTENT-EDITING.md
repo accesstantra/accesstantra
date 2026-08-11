@@ -17,27 +17,19 @@ from here, so editors can't accidentally break the site's look or accessibility.
 
 ## Part A — One-time setup (a developer/admin does this once)
 
-Editors need a way to sign in. Pick **one** of the two options below.
+Editors need a way to sign in. **Use Option 1 (Sign in with GitHub).** It's the
+secure choice: editors never store any token, nothing expires on their side, and
+access is revoked centrally in GitHub. Option 2 (personal access token) is only a
+quick test for a single admin.
 
-### Option 1 (simplest): Personal access token — no server needed
+### Option 1 (recommended): "Sign in with GitHub" button — no tokens for editors
 
-Good for one or two trusted editors. Each editor:
-
-1. Go to https://github.com/settings/tokens → **Generate new token**
-   → **Fine-grained token**.
-2. **Resource owner:** `accesstantra`. **Repository access:** Only select
-   repositories → `accesstantra/accesstantra`.
-3. **Permissions → Repository permissions → Contents: Read and write.**
-4. Generate the token and copy it.
-5. Open https://accesstantra.com/admin → **Sign In Using Access Token** →
-   paste the token.
-
-Nothing else to configure. (Downside: editors manage their own tokens.)
-
-### Option 2 (nicest for non-tech editors): "Sign in with GitHub" button
-
-This gives a normal "Sign in with GitHub" button. It needs a tiny, free
-Cloudflare Worker (one-time, ~10 minutes).
+Editors just click **Sign in with GitHub**, log in on GitHub's own page (with
+their usual 2FA), and they're in. No token is ever shown, stored, or managed by
+them, so there's nothing to leak and no expiry to babysit. This needs a tiny,
+free Cloudflare Worker (one-time, ~10 minutes) that performs the secure token
+exchange. The only secret (the OAuth "client secret") lives **encrypted inside
+the Worker** — never with editors, never in the site's code.
 
 1. **Deploy the authenticator.** Open
    https://github.com/sveltia/sveltia-cms-auth and click **Deploy to Cloudflare
@@ -62,16 +54,40 @@ Cloudflare Worker (one-time, ~10 minutes).
    base_url: https://sveltia-cms-auth.YOURNAME.workers.dev
    ```
    Commit the change. After the site redeploys, https://accesstantra.com/admin
-   will show a working **Sign In with GitHub** button.
+   will show a working **Sign In with GitHub** button. (If you'd rather not touch
+   the config yourself, send the Worker URL to your developer and they'll set
+   this one line.)
 
-> Note: GitHub is expected to add a simpler, no-server sign-in method soon; when
-> it does, the Worker in Option 2 can be removed.
+> Note: GitHub is expected to add a simpler, no-server sign-in method (PKCE)
+> soon; when it does, the Cloudflare Worker can be removed entirely.
 
-### Who can edit
+### Option 2 (quick test only): personal access token
 
-Only people with **write access** to the `accesstantra/accesstantra` GitHub repo
-can save changes. Add editors as repository collaborators in GitHub
-(**Settings → Collaborators**). Removing them there removes their access.
+Fine for a single admin trying things out, **not recommended for shared/editor
+use** — a token can be leaked and expires, and each person must store it safely
+(only ever in a password manager). Prefer Option 1 for real editors.
+
+1. Go to https://github.com/settings/tokens → **Generate new token**
+   → **Fine-grained token**.
+2. **Resource owner:** `accesstantra`. **Repository access:** Only select
+   repositories → `accesstantra/accesstantra`.
+3. **Permissions → Repository permissions → Contents: Read and write.** Set a
+   short **expiration**.
+4. Generate the token and copy it into a password manager.
+5. Open https://accesstantra.com/admin → **Sign In Using Access Token** →
+   paste the token.
+
+### Security: who can edit, and how to revoke access
+
+- **Access is controlled in GitHub, not by tokens.** Only people with **write
+  access** to the `accesstantra/accesstantra` repo can save changes. Add editors
+  as repository collaborators (**Settings → Collaborators**).
+- **To remove an editor:** remove them as a collaborator. With Option 1 you can
+  also revoke the OAuth app for everyone at
+  https://github.com/settings/applications (or in the org's settings). Access
+  stops immediately — there is no long-lived secret sitting on anyone's laptop.
+- **Nothing sensitive lives in the website code.** The OAuth client secret is
+  stored (encrypted) only in the Cloudflare Worker.
 
 ---
 

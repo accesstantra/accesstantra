@@ -1,13 +1,6 @@
 {
   "announcements": [
     {
-      "title": "Microsoft Excel Basic to Advanced — FREE Online Training",
-      "body": "A screen-reader-friendly, live online Excel course starts 17 August. Learn step by step from the basics to advanced formulas, functions, data analysis, charts, and shortcuts — completely free.",
-      "buttonLabel": "Excel course details & enrollment",
-      "link": "/courses/excel",
-      "variant": "primary"
-    },
-    {
       "title": "Free Computer & Digital Skills Course (CDSC)",
       "body": "A free live online course for visually impaired learners starts 17 August, covering computer fundamentals, the internet, email, Microsoft Office, AI productivity, and more.",
       "buttonLabel": "Free course details",

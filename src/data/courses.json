@@ -1,6 +1,105 @@
 {
   "courses": [
     {
+      "id": "excel",
+      "navLabel": "Microsoft Excel Training",
+      "title": "Microsoft Excel Training – New Batch",
+      "tagline": "Intermediate to advanced online Excel training with practical projects. Basic Excel knowledge required.",
+      "upcoming": true,
+      "meta": [
+        { "key": "Starts", "value": "October" },
+        { "key": "Class timing", "value": "Every day at 6:00 PM" },
+        { "key": "Mode", "value": "Online" },
+        { "key": "Fee", "value": "₹200" }
+      ],
+      "subtitle": "Intermediate to advanced Microsoft Excel online training.",
+      "intro": [
+        "After successfully completing four previous batches, Accessible Tantra is starting a new batch of Intermediate to Advanced Microsoft Excel Online Training. Build your Excel skills through practical projects and productivity techniques."
+      ],
+      "sections": [
+        {
+          "heading": "Course details",
+          "list": [
+            "Starts in October",
+            "Classes every day at 6:00 PM",
+            "Online training led by an experienced Excel expert",
+            "Course fee: ₹200"
+          ]
+        },
+        {
+          "heading": "What you will learn",
+          "list": [
+            "Advanced functions and formulas",
+            "Data analysis and large data management",
+            "Lookup, sorting and filtering",
+            "Data validation, charts and dashboards",
+            "Practical projects and productivity techniques"
+          ]
+        },
+        {
+          "heading": "Who can join",
+          "body": [
+            "Open to students, job seekers, working professionals, trainers and office employees who have basic Excel knowledge."
+          ]
+        },
+        {
+          "heading": "For more information",
+          "body": ["Call +91 99107 31239 for course details."]
+        }
+      ],
+      "formHeading": "Register for Microsoft Excel training",
+      "formIntro": ["Fill out the registration form below to join the new batch. You can also open the form in a new tab using the registration button."],
+      "form": {
+        "type": "embed",
+        "src": "https://docs.google.com/forms/d/e/1FAIpQLSca1qDS8npUNZ3Sey45z3RzSdS6OB5Z18URUN0aiqRFRV7IhQ/viewform?embedded=true"
+      },
+      "ctas": [
+        {
+          "label": "Open registration form",
+          "href": "https://forms.gle/dngPzuuDpSoYo1VUA",
+          "variant": "primary"
+        }
+      ],
+      "hi": {
+        "intro": [
+          "पिछले चार बैच सफलतापूर्वक पूरे करने के बाद, Accessible Tantra माइक्रोसॉफ्ट एक्सेल के मध्यम से उन्नत स्तर के ऑनलाइन प्रशिक्षण का नया बैच शुरू कर रहा है। व्यावहारिक प्रोजेक्ट और उत्पादकता बढ़ाने की तकनीकों के माध्यम से अपने एक्सेल कौशल को बेहतर बनाएँ।"
+        ],
+        "sections": [
+          {
+            "heading": "पाठ्यक्रम की जानकारी",
+            "list": [
+              "शुरुआत: अक्टूबर में",
+              "कक्षाएँ: हर दिन शाम 6:00 बजे",
+              "प्रशिक्षण का माध्यम: ऑनलाइन, अनुभवी एक्सेल विशेषज्ञ द्वारा",
+              "पाठ्यक्रम शुल्क: ₹200"
+            ]
+          },
+          {
+            "heading": "आप क्या सीखेंगे",
+            "list": [
+              "उन्नत फंक्शन और फ़ॉर्मूले",
+              "डेटा विश्लेषण और बड़े डेटा का प्रबंधन",
+              "लुकअप, सॉर्टिंग और फ़िल्टरिंग",
+              "डेटा वैलिडेशन, चार्ट और डैशबोर्ड",
+              "व्यावहारिक प्रोजेक्ट और उत्पादकता बढ़ाने की तकनीकें"
+            ]
+          },
+          {
+            "heading": "कौन जुड़ सकता है",
+            "body": [
+              "एक्सेल की बुनियादी जानकारी रखने वाले विद्यार्थी, नौकरी की तलाश कर रहे व्यक्ति, कामकाजी पेशेवर, प्रशिक्षक और कार्यालय कर्मचारी इस प्रशिक्षण में भाग ले सकते हैं।"
+            ]
+          },
+          {
+            "heading": "अधिक जानकारी के लिए",
+            "body": ["पाठ्यक्रम की जानकारी के लिए +91 99107 31239 पर कॉल करें।"]
+          }
+        ],
+        "formIntro": ["नए बैच में जुड़ने के लिए नीचे दिया गया पंजीकरण फ़ॉर्म भरें। पंजीकरण बटन का उपयोग करके आप फ़ॉर्म को नए टैब में भी खोल सकते हैं।"]
+      },
+      "returnHome": true
+    },
+    {
       "id": "computer-digital-skills",
       "navLabel": "Free Computer & Digital Skills Course",
       "title": "Free Computer & Digital Skills Course (CDSC)",

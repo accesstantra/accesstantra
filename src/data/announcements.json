@@ -1,10 +1,10 @@
 {
   "announcements": [
     {
-      "title": "Free Computer & Digital Skills Course (CDSC)",
-      "body": "A free live online course for visually impaired learners starts 17 August, covering computer fundamentals, the internet, email, Microsoft Office, AI productivity, and more.",
-      "buttonLabel": "Free course details",
-      "link": "/courses/computer-digital-skills",
+      "title": "Microsoft Excel Training – New Batch",
+      "body": "Intermediate to advanced online Excel training starts in October, with classes every day at 6:00 PM. Fee: ₹200. Basic Excel knowledge required. View the course page for details in English and Hindi and the registration form.",
+      "buttonLabel": "Excel course details and registration",
+      "link": "/courses/excel",
       "variant": "outline"
     },
     {

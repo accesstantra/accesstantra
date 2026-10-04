@@ -1,6 +1,13 @@
 {
   "announcements": [
     {
+      "title": "REAPER Audio Production Course",
+      "body": "Learn audio editing, recording, mixing and mastering through practical, screen-reader-friendly online training. Starts 21 October 2026; classes from 8:00 PM to 9:00 PM. Fee: ₹599. Basic computer knowledge and a stable internet connection required. Limited seats available.",
+      "buttonLabel": "REAPER course details and registration",
+      "link": "/courses/reaper-audio-production",
+      "variant": "outline"
+    },
+    {
       "title": "Microsoft Excel Training – New Batch",
       "body": "Intermediate to advanced online Excel training starts in October, with classes every day at 6:00 PM. Fee: ₹200. Basic Excel knowledge required. View the course page for details in English and Hindi and the registration form.",
       "buttonLabel": "Excel course details and registration",

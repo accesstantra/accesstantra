@@ -1,6 +1,138 @@
 {
   "courses": [
     {
+      "id": "reaper-audio-production",
+      "navLabel": "REAPER Audio Production Course",
+      "title": "REAPER Audio Production Course",
+      "tagline": "Learn audio editing, recording, mixing and mastering through practical, screen-reader-friendly online training.",
+      "upcoming": true,
+      "meta": [
+        { "key": "Starts", "value": "21 October 2026" },
+        { "key": "Class timing", "value": "8:00 PM – 9:00 PM" },
+        { "key": "Mode", "value": "Online" },
+        { "key": "Fee", "value": "₹599" }
+      ],
+      "subtitle": "Learn audio editing, recording, mixing and mastering with REAPER.",
+      "intro": [
+        "Interested in learning audio editing and audio production with REAPER? Accessible Tantra is conducting an online REAPER Audio Production Course with practical, step-by-step training. Learn how to record, edit, process, mix and master audio using REAPER.",
+        "Limited seats available."
+      ],
+      "sections": [
+        {
+          "heading": "Course details",
+          "list": [
+            "Start date: 21 October 2026",
+            "Class timing: 8:00 PM – 9:00 PM",
+            "Mode: Online",
+            "Course fee: ₹599"
+          ]
+        },
+        {
+          "heading": "What you will learn",
+          "list": [
+            "Introduction to digital audio workstations (DAWs) and REAPER",
+            "REAPER installation, setup and workflow",
+            "Audio recording and editing",
+            "Cutting, splitting, arranging and fading audio",
+            "BPM, tempo and metronome",
+            "VST plugins and audio effects",
+            "EQ, compression and limiting",
+            "Reverb and delay",
+            "Volume and panning automation",
+            "Mixing and track balancing",
+            "Audio processing and enhancement",
+            "Mastering and loudness",
+            "Final processing and audio export",
+            "And much more related to audio editing and production"
+          ]
+        },
+        {
+          "heading": "Course highlights",
+          "list": [
+            "Screen-reader-friendly learning approach",
+            "Practical, hands-on training",
+            "Step-by-step guidance from a professional trainer with experience in audio production",
+            "Important course resources will be provided during the training",
+            "Relevant VST plugins will be shared",
+            "Regular tasks and assignments for practice",
+            "Practical projects to apply the skills learned during the course",
+            "Complete workflow from recording and editing to mixing and mastering"
+          ]
+        },
+        {
+          "heading": "Requirements",
+          "list": ["Basic computer knowledge", "A good, stable internet connection"]
+        },
+        {
+          "heading": "For more information",
+          "body": ["Call +91 72609 20093 for course details."]
+        }
+      ],
+      "formHeading": "Register for REAPER audio production training",
+      "formIntro": ["Fill out the registration form below to join the course. You can also open the form in a new tab using the registration button. Limited seats available."],
+      "form": {
+        "type": "embed",
+        "src": "https://docs.google.com/forms/d/e/1FAIpQLSfOWcfymfvA9Nou_K86j_-bJO6CtHupjAMVjFiXtVbj7AcDQQ/viewform?embedded=true"
+      },
+      "ctas": [
+        { "label": "Open registration form", "href": "https://forms.gle/uynFQ3KzNNDK5bpeA", "variant": "primary" }
+      ],
+      "hi": {
+        "intro": [
+          "क्या आप REAPER के साथ ऑडियो एडिटिंग और ऑडियो प्रोडक्शन सीखना चाहते हैं? Accessible Tantra व्यावहारिक, चरणबद्ध प्रशिक्षण के साथ ऑनलाइन REAPER ऑडियो प्रोडक्शन पाठ्यक्रम आयोजित कर रहा है। REAPER का उपयोग करके ऑडियो रिकॉर्ड करना, संपादित करना, प्रोसेस करना, मिक्स करना और मास्टर करना सीखें।",
+          "सीटें सीमित हैं।"
+        ],
+        "sections": [
+          {
+            "heading": "पाठ्यक्रम की जानकारी",
+            "list": ["शुरुआत: 21 अक्टूबर 2026", "कक्षा का समय: रात 8:00 से 9:00 बजे", "माध्यम: ऑनलाइन", "पाठ्यक्रम शुल्क: ₹599"]
+          },
+          {
+            "heading": "आप क्या सीखेंगे",
+            "list": [
+              "डिजिटल ऑडियो वर्कस्टेशन (DAW) और REAPER का परिचय",
+              "REAPER की स्थापना, सेटअप और कार्यप्रणाली",
+              "ऑडियो रिकॉर्डिंग और एडिटिंग",
+              "ऑडियो काटना, विभाजित करना, व्यवस्थित करना और फ़ेड करना",
+              "BPM, टेम्पो और मेट्रोनोम",
+              "VST प्लगइन और ऑडियो इफ़ेक्ट",
+              "EQ, कम्प्रेशन और लिमिटिंग",
+              "रीवर्ब और डिले",
+              "वॉल्यूम और पैनिंग का ऑटोमेशन",
+              "मिक्सिंग और ट्रैक का संतुलन",
+              "ऑडियो प्रोसेसिंग और गुणवत्ता सुधार",
+              "मास्टरिंग और लाउडनेस",
+              "अंतिम प्रोसेसिंग और ऑडियो एक्सपोर्ट",
+              "ऑडियो एडिटिंग और प्रोडक्शन से जुड़ी कई अन्य तकनीकें"
+            ]
+          },
+          {
+            "heading": "पाठ्यक्रम की विशेषताएँ",
+            "list": [
+              "स्क्रीन रीडर के अनुकूल सीखने का तरीका",
+              "व्यावहारिक प्रशिक्षण और अभ्यास",
+              "ऑडियो प्रोडक्शन में अनुभवी पेशेवर प्रशिक्षक से चरणबद्ध मार्गदर्शन",
+              "प्रशिक्षण के दौरान पाठ्यक्रम के महत्वपूर्ण संसाधन उपलब्ध कराए जाएँगे",
+              "संबंधित VST प्लगइन साझा किए जाएँगे",
+              "अभ्यास के लिए नियमित कार्य और असाइनमेंट",
+              "सीखे गए कौशल का उपयोग करने के लिए व्यावहारिक प्रोजेक्ट",
+              "रिकॉर्डिंग और एडिटिंग से मिक्सिंग और मास्टरिंग तक की पूरी कार्यप्रणाली"
+            ]
+          },
+          {
+            "heading": "आवश्यकताएँ",
+            "list": ["कंप्यूटर की बुनियादी जानकारी", "अच्छा और स्थिर इंटरनेट कनेक्शन"]
+          },
+          {
+            "heading": "अधिक जानकारी के लिए",
+            "body": ["पाठ्यक्रम की जानकारी के लिए +91 72609 20093 पर कॉल करें।"]
+          }
+        ],
+        "formIntro": ["पाठ्यक्रम में जुड़ने के लिए नीचे दिया गया पंजीकरण फ़ॉर्म भरें। पंजीकरण बटन का उपयोग करके आप फ़ॉर्म को नए टैब में भी खोल सकते हैं। सीटें सीमित हैं।"]
+      },
+      "returnHome": true
+    },
+    {
       "id": "excel",
       "navLabel": "Microsoft Excel Training",
       "title": "Microsoft Excel Training – New Batch",

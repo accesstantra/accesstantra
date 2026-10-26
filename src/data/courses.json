@@ -5,7 +5,7 @@
       "navLabel": "REAPER Audio Production Course",
       "title": "REAPER Audio Production Course",
       "tagline": "Learn audio editing, recording, mixing and mastering through practical, screen-reader-friendly online training.",
-      "upcoming": true,
+      "upcoming": false,
       "meta": [
         { "key": "Starts", "value": "21 October 2026" },
         { "key": "Class timing", "value": "8:00 PM – 9:00 PM" },
@@ -15,7 +15,7 @@
       "subtitle": "Learn audio editing, recording, mixing and mastering with REAPER.",
       "intro": [
         "Interested in learning audio editing and audio production with REAPER? Accessible Tantra is conducting an online REAPER Audio Production Course with practical, step-by-step training. Learn how to record, edit, process, mix and master audio using REAPER.",
-        "Limited seats available."
+        "Registration for this batch is closed."
       ],
       "sections": [
         {
@@ -68,19 +68,10 @@
           "body": ["Call +91 72609 20093 for course details."]
         }
       ],
-      "formHeading": "Register for REAPER audio production training",
-      "formIntro": ["Fill out the registration form below to join the course. You can also open the form in a new tab using the registration button. Limited seats available."],
-      "form": {
-        "type": "embed",
-        "src": "https://docs.google.com/forms/d/e/1FAIpQLSfOWcfymfvA9Nou_K86j_-bJO6CtHupjAMVjFiXtVbj7AcDQQ/viewform?embedded=true"
-      },
-      "ctas": [
-        { "label": "Open registration form", "href": "https://forms.gle/uynFQ3KzNNDK5bpeA", "variant": "primary" }
-      ],
       "hi": {
         "intro": [
           "क्या आप REAPER के साथ ऑडियो एडिटिंग और ऑडियो प्रोडक्शन सीखना चाहते हैं? Accessible Tantra व्यावहारिक, चरणबद्ध प्रशिक्षण के साथ ऑनलाइन REAPER ऑडियो प्रोडक्शन पाठ्यक्रम आयोजित कर रहा है। REAPER का उपयोग करके ऑडियो रिकॉर्ड करना, संपादित करना, प्रोसेस करना, मिक्स करना और मास्टर करना सीखें।",
-          "सीटें सीमित हैं।"
+          "इस बैच के लिए पंजीकरण बंद है।"
         ],
         "sections": [
           {
@@ -127,8 +118,7 @@
             "heading": "अधिक जानकारी के लिए",
             "body": ["पाठ्यक्रम की जानकारी के लिए +91 72609 20093 पर कॉल करें।"]
           }
-        ],
-        "formIntro": ["पाठ्यक्रम में जुड़ने के लिए नीचे दिया गया पंजीकरण फ़ॉर्म भरें। पंजीकरण बटन का उपयोग करके आप फ़ॉर्म को नए टैब में भी खोल सकते हैं। सीटें सीमित हैं।"]
+        ]
       },
       "returnHome": true
     },

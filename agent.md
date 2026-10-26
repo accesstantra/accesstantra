@@ -21,8 +21,8 @@ assumptions, and prefer small, data-driven edits over new code.
 3. **Exactly one `<h1>` per page.** On the **Home** page the `<h1>` is the site title in the
    header (`Header.jsx`); every other page provides its own `<h1>` (usually inside
    `.page-hero`). Don't add a second `<h1>`.
-4. **Never use `href="#something"` for in‑page links.** Routing uses **HashRouter**, so any
-   `#...` href changes the route and breaks the page. To move focus/scroll within a page, use
+4. **Keep in-page navigation accessible.** Routing uses **BrowserRouter** with clean paths.
+   To move focus/scroll within a page without changing the URL, use
    a `<button>` with an `onClick` that calls `element.focus()` (see the skip link in
    `Header.jsx` and "Skip to form" in `ContentPage.jsx`).
 5. **Keep `vite.config.js` `base: '/'` and `public/CNAME` (`accesstantra.com`).** These make
@@ -46,7 +46,7 @@ assumptions, and prefer small, data-driven edits over new code.
 | | |
 |---|---|
 | **Live site** | https://accesstantra.com |
-| **Stack** | React 18 + Vite 5, React Router 7 (**HashRouter**), plain CSS (design tokens). No CSS framework, no TypeScript, no external fonts. |
+| **Stack** | React 18 + Vite 5, React Router 7 (**BrowserRouter**), plain CSS (design tokens). No CSS framework, no TypeScript, no external fonts. |
 | **Hosting** | GitHub Pages, custom domain `accesstantra.com`, auto-deployed by GitHub Actions on push to `main`. |
 | **Repo** | `github.com/accesstantra/accesstantra`, default branch `main`. |
 | **Git identity** | Commit & push as the **`accesstantra`** GitHub account (email `accesstantra@gmail.com`). The `origin` remote is `https://accesstantra@github.com/accesstantra/accesstantra.git`. The Microsoft/other account does **not** have push access. |
@@ -60,13 +60,14 @@ assumptions, and prefer small, data-driven edits over new code.
 ```bash
 npm install        # install dependencies (first time)
 npm run dev        # local dev server with hot reload (http://localhost:5173)
-npm run build      # production build into dist/  (run this before pushing to catch errors)
+npm run build      # production build + static route entries into dist/
+npm run test:routing # verify legacy links and production route entries (after build)
 npm run preview    # serve the built dist/ locally to sanity-check the production build
 ```
 
-There are **no tests** and **no linter** configured. "Passing" = `npm run build` completes
-with no errors, and the page looks/behaves correctly. Always run `npm run build` before you
-commit.
+There is **no linter** configured. Routing checks use Node’s built-in test runner via
+`npm run test:routing` after building. Also check the page looks/behaves correctly.
+Always run `npm run build` before you commit.
 
 ---
 
@@ -85,8 +86,8 @@ accesstantra/
 ├── .github/workflows/deploy.yml# CI: on push to main → build → deploy to GitHub Pages.
 ├── agent.md                    # THIS GUIDE.
 └── src/
-    ├── main.jsx                # Entry. Wraps <App/> in <HashRouter> + <React.StrictMode>,
-    │                           #   imports index.css. Don't change the router type.
+    ├── main.jsx                # Entry. Wraps <App/> in <BrowserRouter> + <React.StrictMode>,
+    │                           #   imports index.css; migrates legacy hash URLs before mounting.
     ├── App.jsx                 # All routes (see Routing map). Looks up data via getInitiative/
     │                           #   getCourse and renders <ContentPage>.
     ├── index.css               # GLOBAL styles: design tokens (:root + [data-theme=dark]),
@@ -129,14 +130,24 @@ accesstantra/
 
 ```
 index.html (#root, theme script)
-   └─ main.jsx  → <HashRouter><App/></HashRouter>
+   └─ main.jsx  → <BrowserRouter><App/></BrowserRouter>
         └─ App.jsx  → <Routes> under <Layout/>
              └─ Layout.jsx → <Header/> + <main id="main-content"><Outlet/></main> + <Footer/>
                   └─ the matched page component renders inside <main>
 ```
 
-- **Routing is hash-based** (URLs look like `https://accesstantra.com/#/about`). This is on
-  purpose so GitHub Pages serves deep links without a server. Do not switch to BrowserRouter.
+- **Routing uses clean paths** (for example `https://accesstantra.com/about`).
+  `src/routes.js` defines the page paths shared by React and the static build.
+  `scripts/build-route-pages.mjs` copies the built HTML into each known route directory
+  and creates `404.html` for unknown or removed routes. This supports direct visits and
+  refreshes on GitHub Pages without a server rewrite. Pages may append a trailing slash.
+  CMS course/program IDs are included automatically, even for courses no longer upcoming.
+  Add new fixed routes to `pagePaths` and `App.jsx`; keep assets root-relative.
+  `src/legacyRouting.js` converts old root `/#/...` bookmarks to clean paths before React mounts,
+  preserving query parameters and section fragments. Ordinary fragments and admin URLs are left alone.
+  `LegacyHashRedirect.jsx` also handles old bookmarks opened while Home is already loaded.
+  Verify direct visits against a static server as well as Vite preview: Vite's automatic
+  SPA fallback alone cannot verify that the GitHub Pages route entries exist.
 - **`Layout.jsx`** renders the global chrome and, on every route change, scrolls to top and
   moves keyboard focus into `<main>` (with `preventScroll: true`).
 - **Data‑driven pages:** `App.jsx` maps a URL param to a data object and passes it to the
@@ -385,7 +396,7 @@ fields. The English/हिन्दी toggle then appears automatically (handle
       `role="alert"`; invalid fields get `aria-invalid`.
 - [ ] **Keyboard only works:** tab order is logical, focus is always visible (the global
       `:focus-visible` outline — never remove it), dropdowns close on Escape.
-- [ ] **No `href="#..."`** (HashRouter trap). Use a button + `focus()` to move within a page.
+- [ ] **In-page actions move focus.** Keep the skip link and skip-to-form behavior working without changing routes.
 - [ ] **External links:** `target="_blank" rel="noopener noreferrer"` **and** a visually-hidden
       "(opens in a new tab)" note (`<span className="sr-only">`).
 - [ ] **iframes have a descriptive `title`** (Google forms, YouTube videos).
@@ -414,7 +425,7 @@ fields. The English/हिन्दी toggle then appears automatically (handle
 
 | Symptom | Cause / Fix |
 |---|---|
-| Clicking an in-page link blanks the page | An `href="#..."` changed the hash route. Use a `<button onClick>` that focuses the target instead. |
+| Clicking an in-page link blanks the page | Check the target and focus handler. Route links use React Router; in-page controls should focus the intended element. |
 | Native form "submits" but no responses appear | Google Form "Collect email = Verified" silently drops anonymous posts. Set it to *Do not collect*, or switch to `type:'embed'`. |
 | Site CSS/JS 404s after deploy | `vite.config.js` `base` is not `/`, or `public/CNAME` was removed. Restore them. |
 | Home header is blank | The `focus(...)` in `Layout.jsx` lost `{ preventScroll: true }`. Restore it. |
@@ -446,7 +457,8 @@ fields. The English/हिन्दी toggle then appears automatically (handle
 
 ```bash
 # make your edits in src/ …
-npm run build                      # must succeed with no errors
+npm run build                      # builds assets + direct-entry route HTML
+npm run test:routing               # must pass before pushing
 git add -A
 git commit -m "Clear, present-tense summary of the change"
 git push origin main               # triggers the deploy

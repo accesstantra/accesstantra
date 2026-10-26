@@ -10,6 +10,7 @@ import PastEvents from './pages/PastEvents.jsx'
 import { getInitiative } from './data/initiatives.js'
 import { getCourse } from './data/courses.js'
 import research from './data/research.js'
+import { pagePaths, programPath, coursePath } from './routes.js'
 
 function InitiativeRoute() {
   const { programId } = useParams()
@@ -24,24 +25,24 @@ function CourseRoute() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path={pagePaths.home} element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path={pagePaths.about} element={<About />} />
 
-        <Route path="initiatives" element={<InitiativesOverview />} />
-        <Route path="programs/:programId" element={<InitiativeRoute />} />
+        <Route path={pagePaths.initiatives} element={<InitiativesOverview />} />
+        <Route path={programPath(':programId')} element={<InitiativeRoute />} />
 
-        <Route path="courses" element={<CoursesLanding />} />
-        <Route path="courses/:courseId" element={<CourseRoute />} />
+        <Route path={pagePaths.courses} element={<CoursesLanding />} />
+        <Route path={coursePath(':courseId')} element={<CourseRoute />} />
 
-        <Route path="past-events" element={<PastEvents />} />
+        <Route path={pagePaths.pastEvents} element={<PastEvents />} />
 
-        <Route path="research" element={<ContentPage page={research} />} />
+        <Route path={pagePaths.research} element={<ContentPage page={research} />} />
 
-        <Route path="contact" element={<Contact />} />
+        <Route path={pagePaths.contact} element={<Contact />} />
 
         {/* Legacy redirect */}
-        <Route path="what-we-do" element={<Navigate to="/initiatives" replace />} />
+        <Route path={pagePaths.legacyInitiatives} element={<Navigate to={pagePaths.initiatives} replace />} />
 
         {/* Fallback */}
         <Route path="*" element={<ContentPage page={undefined} />} />

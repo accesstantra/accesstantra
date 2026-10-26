@@ -20,8 +20,7 @@ function Header() {
   // it's plain branding and each page supplies its own <h1>.
   const TitleTag = pathname === '/' ? 'h1' : 'div'
 
-  // Move focus into the main region. Avoid href="#main-content" because
-  // HashRouter would treat that hash as a (non-existent) route.
+  // Move keyboard focus as well as scrolling, without changing the URL.
   function handleSkip(event) {
     event.preventDefault()
     const main = document.getElementById('main-content')

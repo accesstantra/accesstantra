@@ -1,13 +1,6 @@
 {
   "announcements": [
     {
-      "title": "Microsoft Excel Training – New Batch",
-      "body": "Intermediate to advanced online Excel training starts in October, with classes every day at 6:00 PM. Fee: ₹200. Basic Excel knowledge required. View the course page for details in English and Hindi and the registration form.",
-      "buttonLabel": "Excel course details and registration",
-      "link": "/courses/excel",
-      "variant": "outline"
-    },
-    {
       "title": "Mentorship Programme",
       "body": "Open now — students, professionals, and parents can get guidance from experienced mentors and subject experts. Fill in the form on the programme page to request mentorship.",
       "buttonLabel": "Request mentorship",
